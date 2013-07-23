@@ -2,7 +2,7 @@ language: ruby
 rvm:
 - 1.9.3
 - 1.8.7
-script: rake build
+script: rake generate
 env:
   global:
     secure: UJXei3iU7ms74tPxFPnOmvhzNLwxiAV3VvqKzpYTsLQs/rM2X+lfyZYPv/Nw+vXfOIw8EQIf/Ri3GOBbabGaP88glkFrRptQXoSg1XeWOQbuYKlb1oz75jPiOkVARJ3+uobN2U4yBANhBc3bhPTBQiNbtlViRujbnoCgWNl+iSI=
