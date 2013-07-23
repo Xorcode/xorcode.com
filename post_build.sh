@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Based on https://github.com/wet-boew/wet-boew/blob/master/build/post_build.sh
 
@@ -11,7 +11,7 @@ function error_exit
   exit 1
 }
 
-if [ "$POST_BUILD" == "true" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] &&  [ "$TRAVIS_REPO_SLUG" == "Xorcode/xorcode.com" ]; then
+if [ "$TRAVIS_PULL_REQUEST" == "false" ] &&  [ "$TRAVIS_REPO_SLUG" == "Xorcode/xorcode.com" ]; then
   #Set git user
   git config --global user.email "tbjers@xorcode.com"
   git config --global user.name "Travis"
@@ -22,3 +22,9 @@ if [ "$POST_BUILD" == "true" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ] &&  [ "$
   rake generate # 2> /dev/null || error_exit "Error generating site";
   rake deploy # 2> /dev/null || error_exit "Error deploying site to Github Pages";
 fi
+
+end=$(date +%s)
+elapsed=$(( $end - $start ))
+minutes=$(( $elapsed / 60 ))
+seconds=$(( $elapsed % 60 ))
+echo "Post-Build process finished in $minutes minute(s) and $seconds seconds"
