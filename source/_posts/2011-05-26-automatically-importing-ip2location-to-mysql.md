@@ -14,7 +14,7 @@ wordpress_id: 468
 wordpress_url: http://xorcode.com/?p=468
 date: 2011-05-26 15:23:06.000000000 -04:00
 categories:
-- Guides
+- Code
 tags:
 - web
 - php

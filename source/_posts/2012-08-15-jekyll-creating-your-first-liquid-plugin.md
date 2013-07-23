@@ -2,7 +2,7 @@
 layout: post
 title: "Jekyll: Creating Your First Liquid Plugin"
 description: ""
-category: Guides
+categories: Code
 tags: [jekyll,jekyll-bootstrap,ruby,qr]
 ---
 

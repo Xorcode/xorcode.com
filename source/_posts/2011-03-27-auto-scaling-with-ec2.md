@@ -13,7 +13,7 @@ wordpress_id: 39
 wordpress_url: http://blog.xorcode.com/?p=39
 date: 2011-03-27 13:45:04.000000000 -04:00
 categories:
-- Guides
+- Cloud
 tags:
 - ec2
 - amazon

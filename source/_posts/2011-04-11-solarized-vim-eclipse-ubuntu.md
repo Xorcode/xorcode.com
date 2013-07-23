@@ -15,7 +15,7 @@ wordpress_id: 403
 wordpress_url: http://xorcode.com/?p=403
 date: 2011-04-11 16:59:17.000000000 -04:00
 categories:
-- Guides
+- Linux
 tags:
 - eclipse
 - ubuntu

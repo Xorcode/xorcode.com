@@ -14,7 +14,8 @@ wordpress_id: 502
 wordpress_url: http://xorcode.com/?p=502
 date: 2012-03-22 19:22:04.000000000 -04:00
 categories:
-- Guides
+- Cloud
+- Code
 tags:
 - amazon
 - php

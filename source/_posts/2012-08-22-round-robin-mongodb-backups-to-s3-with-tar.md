@@ -2,7 +2,7 @@
 layout: post
 title: "Round Robin MongoDB backups to S3 with Tar"
 description: ""
-category: Guides
+categories: [Cloud,Server]
 excerpt: Have you been looking for an easy way to back something up to the cloud with minimum effort? Having explored several options we settled on the most simple solution available. Tar and Amazon S3.
 tags: [tar,mongodb,amazon,s3]
 ---
