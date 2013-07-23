@@ -1,6 +1,4 @@
-#!/bin/bash
-
-# Based on https://github.com/wet-boew/wet-boew/blob/master/build/post_build.sh
+#!/usr/bin/env bash
 
 start=$(date +%s)
 echo -e "Current repo: $TRAVIS_REPO_SLUG\n"
