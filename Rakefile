@@ -307,9 +307,15 @@ task :setup_github_pages, :repo do |t, args|
     puts "(For example, 'git@github.com:your_username/your_username.github.io)"
     repo_url = get_stdin("Repository url: ")
   end
-  user = repo_url.match(/:([^\/]+)/)[1]
-  branch = (repo_url.match(/\/[\w-]+\.github\.io/).nil?) ? 'gh-pages' : 'master'
-  project = (branch == 'gh-pages') ? repo_url.match(/\/([^\.]+)/)[1] : ''
+  if repo_url.match(/https:/)
+    user = repo_url.match(/@github\.com\/([^\/]+)/)[1]
+    branch = (repo_url.match(/\/[\w-]+\.github\.io/).nil?) ? 'gh-pages' : 'master'
+    project = (branch == 'gh-pages') ? repo_url.match(/\/([^\.]+)/)[1] : ''
+  else
+    user = repo_url.match(/:([^\/]+)/)[1]
+    branch = (repo_url.match(/\/[\w-]+\.github\.io/).nil?) ? 'gh-pages' : 'master'
+    project = (branch == 'gh-pages') ? repo_url.match(/\/([^\.]+)/)[1] : ''
+  end
   unless (`git remote -v` =~ /origin.+?octopress(?:\.git)?/).nil?
     # If octopress is still the origin remote (from cloning) rename it to octopress
     system "git remote rename origin octopress"
@@ -328,8 +334,15 @@ task :setup_github_pages, :repo do |t, args|
       end
     end
   end
-  url = "http://#{user}.github.io"
-  url += "/#{project}" unless project == ''
+  # Added support for using Github Pages CNAME to generate URL
+  if FileTest.exist?('source/CNAME')
+    cname = IO.read('source/CNAME')
+    cname.strip!
+    url = "http://#{cname}"
+  else
+    url = "http://#{user}.github.io"
+    url += "/#{project}" unless project == ''
+  end
   jekyll_config = IO.read('_config.yml')
   jekyll_config.sub!(/^url:.*$/, "url: #{url}")
   File.open('_config.yml', 'w') do |f|
