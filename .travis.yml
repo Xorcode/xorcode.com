@@ -2,7 +2,11 @@ language: ruby
 rvm:
 - 1.9.3
 script: rake generate
-after_script: bash post_build.sh
+before_script:
+  - pwd
+after_script:
+  - pwd
+  - bash post_build.sh
 env:
   global:
     secure: UJXei3iU7ms74tPxFPnOmvhzNLwxiAV3VvqKzpYTsLQs/rM2X+lfyZYPv/Nw+vXfOIw8EQIf/Ri3GOBbabGaP88glkFrRptQXoSg1XeWOQbuYKlb1oz75jPiOkVARJ3+uobN2U4yBANhBc3bhPTBQiNbtlViRujbnoCgWNl+iSI=
