@@ -9,7 +9,7 @@ function error_exit
   exit 1
 }
 
-if [ "$TRAVIS_PULL_REQUEST" == "false" ] &&  [ "$TRAVIS_REPO_SLUG" == "Xorcode/xorcode.com" ]; then
+if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_REPO_SLUG" == "Xorcode/xorcode.com" ]; then
   #Set git user
   git config --global user.email "tbjers@xorcode.com"
   git config --global user.name "Travis"
