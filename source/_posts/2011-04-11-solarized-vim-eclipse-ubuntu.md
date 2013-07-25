@@ -14,6 +14,7 @@ excerpt: ! "We discovered <a href=\"http://xorcode.net/ejFgVg\" target=\"_blank\
 wordpress_id: 403
 wordpress_url: http://xorcode.com/?p=403
 date: 2011-04-11 16:59:17.000000000 -04:00
+comments: true
 categories:
 - Linux
 tags:
