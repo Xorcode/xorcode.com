@@ -9,24 +9,20 @@
         <span class="icon-bar"></span>
       </button>
       <!-- logotype -->
-      <a class="brand" href="#"></a>
+      <a class="brand" href="{{ root_url }}/"></a>
       <!-- main menu -->
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="{{ root_url }}/">Home</a></li>
+          <li><a href="{{ root_url }}/services.html">Services</a></li>
+          <li><a href="{{ root_url }}/about.html">About</a></li>
         </ul>
       </div>
       <!-- topics menu -->
       <div class="nav-collapse collapse">
         <ul class="nav pull-right">
           <li class="header"><span>topics <i class="icon-rss"></i></span></li>
-          <li><a href="#"><i class="icon-cloud"></i><span>cloud</span></a></li>
-          <li><a href="#"><i class="icon-code"></i>code</a></li>
-          <li><a href="#"><i class="icon-cogs"></i>server</a></li>
-          <li><a href="#"><i class="icon-laptop"></i>linux</a></li>
-          <li><a href="#"><i class="icon-android"></i>android</a></li>
+          {% category_list icon:true %}
         </ul>
       </div>
     </div>
