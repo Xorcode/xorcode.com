@@ -23,7 +23,7 @@ tags:
 
 Zend Framework has a straightforward setup process providing that the developer sets everything up manually. This guide illustrates how to set up a modular installation of Zend Framework.
 
-> ![Zend Framework]({{ UPLOAD_PATH }}/2011/03/zf-logo-mark1.png) Extending the art and spirit of PHP, Zend Framework is based on simplicity, object-oriented best practices, corporate friendly licensing, and a rigorously tested agile codebase.
+> ![Zend Framework](/uploads/2011/03/zf-logo-mark1.png) Extending the art and spirit of PHP, Zend Framework is based on simplicity, object-oriented best practices, corporate friendly licensing, and a rigorously tested agile codebase.
 
 ## Requirements
 

@@ -9,7 +9,7 @@ tags: [jekyll,jekyll-bootstrap,wordpress,ruby]
 
 We are always looking for ways to improve performance. As an exercise we tried to find the easiest, fastest, blog publishing tool out there. The engine behind [GitHub Pages](http://xorcode.net/Pb1LG2) caught our eye. Enter [Jekyll](http://xorcode.net/Pb1SBF). Then enter [Jekyll-Bootstrap](http://xorcode.net/SjE0JM).
 
-> ![Jekyll, WordPress, and Ruby]({{ UPLOAD_PATH }}/2012/08/jekyll-150x150.jpg) Jekyll is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.
+> ![Jekyll, WordPress, and Ruby](/uploads/2012/08/jekyll-150x150.jpg) Jekyll is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.
 
 Our previous choice of CMS happened to be WordPress simply because we design and maintain several WordPress installations for our clients. How does one migrate from WordPress to Jekyll?
 
