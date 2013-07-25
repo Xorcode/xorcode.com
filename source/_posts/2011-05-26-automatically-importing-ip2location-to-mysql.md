@@ -22,7 +22,7 @@ tags:
 
 Have you ever found that you need to know where in the world a user happens to browse from? We did, and we tried several API services that proved to be unreliable and also created overhead when an API call was placed for each visitor of the site.
 
-> ![Globe]({{ UPLOAD_PATH }}/2011/05/globe-150x150.png) [IP2Location](http://xorcode.net/jdBHWg) is a geo IP solution to help you to identify visitor's geographical location, such as country, region, city, latitude, longitude, ZIP code, time zone, connection speed, ISP and domain name, IDD country code, area code, weather station code and name, and mobile carrier information using a proprietary IP address lookup database and technology without invading the Internet user's privacy.
+> ![Globe](/uploads/2011/05/globe-150x150.png) [IP2Location](http://xorcode.net/jdBHWg) is a geo IP solution to help you to identify visitor's geographical location, such as country, region, city, latitude, longitude, ZIP code, time zone, connection speed, ISP and domain name, IDD country code, area code, weather station code and name, and mobile carrier information using a proprietary IP address lookup database and technology without invading the Internet user's privacy.
 
 ## Requirements
 

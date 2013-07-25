@@ -20,7 +20,7 @@ tags:
 ---
 
 Set up a scalable server farm in less than 10 minutes with Amazon Elastic Compute Cloud utilizing Elastic Load Balancing and Auto Scaling.<a id="more"></a><a id="more-39"></a>
-<blockquote><img class="alignright size-full wp-image-93" title="Amazon Web Services" src="{{ UPLOAD_PATH }}/2011/03/aws_logo.png" alt="" width="164" height="67" />Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale computing easier for developers.</blockquote>
+<blockquote><img class="alignright size-full wp-image-93" title="Amazon Web Services" src="/uploads/2011/03/aws_logo.png" alt="" width="164" height="67" />Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale computing easier for developers.</blockquote>
 If you have used EC2 at all you must have wondered how you can automate the creation of instances in your load balancer. So did we. After much searching and various testing back and forth we came up with the following solution.
 
 <strong>Dependencies</strong>
@@ -43,11 +43,11 @@ The EC2 command line tools are available through the Ubuntu Multiverse repositor
 <pre class="prettyprint"># sudo apt-get install ec2-api-tools</pre>
 Once you have installed the tools you need to download your key pair from Amazon so that you can access the API via the tools. In order to do this you need to access them through your <a href="http://aws.amazon.com/account/" target="_blank">AWS Account</a>. Once there, click the "<a href="https://aws-portal.amazon.com/gp/aws/developer/account/index.html?ie=UTF8&amp;action=access-key" target="_blank">Security Credentials</a>" link, here you need to create an X.509 Certificate for use with the EC2 Tools.
 
-<img class="alignnone size-full wp-image-57" title="X.509 Certificates - Create Certificate" src="{{ UPLOAD_PATH }}/2011/03/createcert.png" alt="" />
+<img class="alignnone size-full wp-image-57" title="X.509 Certificates - Create Certificate" src="/uploads/2011/03/createcert.png" alt="" />
 
 Download both the Private Key File and the X.509 Certificate by using the two buttons.
 
-<img class="alignnone size-full wp-image-58" title="Download X.509 Certificate" src="{{ UPLOAD_PATH }}/2011/03/x.509cert.png" alt="" />
+<img class="alignnone size-full wp-image-58" title="Download X.509 Certificate" src="/uploads/2011/03/x.509cert.png" alt="" />
 
 Store your private key file somewhere safe. Like the text above states, if you lose it, there is no way to recover and you will have to create a new certificate. This is especially important with your SSH key used with your instances since you will lose SSH access if you lose your private key part.
 
