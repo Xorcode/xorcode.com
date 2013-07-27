@@ -9,9 +9,9 @@ tags: [aws,amazon,apache,performance]
 
 Help determine your Apache `ServerLimit` and `MaxClients` for your specific server configuration.
 
-Oftentimes when we fire up a new AWS instance we have it configured as a t1.micro instance. The default Apache configuration does not take this into account. The t1.micro instances also come without a swap partition which may cause your instance to run out of RAM. If you are running an instance of MySQL or memcached on the same server, you will sooner or later notice that MySQL has stopped responding because the operating system killed it.
+Oftentimes when we fire up a new AWS instance we use the t1.micro type. The default Apache configuration does not take this into account. The t1.micro instances also come without a swap partition which may cause trouble once your instance run out of RAM. If you are running MySQL or memcached on the same server you will sooner or later notice that MySQL has stopped responding because the operating system killed it.
 
-The following simple script to determine your Apache `ServerLimit` and `MaxClients`:
+Use the following simple script to determine your Apache `ServerLimit` and `MaxClients`:
 
 {% gist 4496984/check-apache-instances.sh %}
 
