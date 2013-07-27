@@ -8,7 +8,6 @@ group :development do
   gem 'pygments.rb', '~> 0.3.4'
   gem 'RedCloth', '~> 4.2.9'
   gem 'haml', '~> 3.1.7'
-  gem 'compass', '~> 0.12.2'
   gem 'rubypants', '~> 0.2.0'
   gem 'rb-fsevent', '~> 0.9'
   gem 'stringex', '~> 1.4.0'
@@ -16,4 +15,6 @@ group :development do
   gem 'bitly', '~> 0.9.0'
 end
 
+gem 'therubyracer'
+gem 'jekyll-less', '~> 0.0.4'
 gem 'sinatra', '~> 1.3.3'

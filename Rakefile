@@ -52,41 +52,36 @@ desc "Generate jekyll site"
 task :generate do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
   puts "## Generating Site with Jekyll"
-  system "compass compile --css-dir #{source_dir}/css"
   system "jekyll"
 end
 
 desc "Watch the site and regenerate when it changes"
 task :watch do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
-  puts "Starting to watch source with Jekyll and Compass."
-  system "compass compile --css-dir #{source_dir}/css" unless File.exist?("#{source_dir}/css/screen.css")
+  puts "Starting to watch source with Jekyll."
   jekyllPid = Process.spawn({"OCTOPRESS_ENV"=>"preview"}, "jekyll --auto")
-  compassPid = Process.spawn("compass watch")
 
   trap("INT") {
-    [jekyllPid, compassPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
+    [jekyllPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
     exit 0
   }
 
-  [jekyllPid, compassPid].each { |pid| Process.wait(pid) }
+  [jekyllPid].each { |pid| Process.wait(pid) }
 end
 
 desc "preview the site in a web browser"
 task :preview do
   raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir)
-  puts "Starting to watch source with Jekyll and Compass. Starting Rack on port #{server_port}"
-  system "compass compile --css-dir #{source_dir}/css" unless File.exist?("#{source_dir}/css/screen.css")
+  puts "Starting to watch source with Jekyll. Starting Rack on port #{server_port}"
   jekyllPid = Process.spawn({"OCTOPRESS_ENV"=>"preview"}, "jekyll --auto")
-  compassPid = Process.spawn("compass watch")
   rackupPid = Process.spawn("rackup --port #{server_port}")
 
   trap("INT") {
-    [jekyllPid, compassPid, rackupPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
+    [jekyllPid, rackupPid].each { |pid| Process.kill(9, pid) rescue Errno::ESRCH }
     exit 0
   }
 
-  [jekyllPid, compassPid, rackupPid].each { |pid| Process.wait(pid) }
+  [jekyllPid, rackupPid].each { |pid| Process.wait(pid) }
 end
 
 # usage rake new_post[my-new-post] or rake new_post['my new post'] or rake new_post (defaults to "new-post")
@@ -275,14 +270,6 @@ task :set_root_dir, :dir do |t, args|
     rakefile.sub!(/public_dir(\s*)=(\s*)(["'])[\w\-\/]*["']/, "public_dir\\1=\\2\\3public#{dir}\\3")
     File.open(__FILE__, 'w') do |f|
       f.write rakefile
-    end
-    compass_config = IO.read('config.rb')
-    compass_config.sub!(/http_path(\s*)=(\s*)(["'])[\w\-\/]*["']/, "http_path\\1=\\2\\3#{dir}/\\3")
-    compass_config.sub!(/http_images_path(\s*)=(\s*)(["'])[\w\-\/]*["']/, "http_images_path\\1=\\2\\3#{dir}/img\\3")
-    compass_config.sub!(/http_fonts_path(\s*)=(\s*)(["'])[\w\-\/]*["']/, "http_fonts_path\\1=\\2\\3#{dir}/font\\3")
-    compass_config.sub!(/css_dir(\s*)=(\s*)(["'])[\w\-\/]*["']/, "css_dir\\1=\\2\\3public#{dir}/css\\3")
-    File.open('config.rb', 'w') do |f|
-      f.write compass_config
     end
     jekyll_config = IO.read('_config.yml')
     jekyll_config.sub!(/^destination:.+$/, "destination: public#{dir}")

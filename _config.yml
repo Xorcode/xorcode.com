@@ -53,6 +53,10 @@ default_asides: []
 # post_asides:
 # page_asides:
 
+less:
+  compress: true
+  theme_files: ['/css/theme_venera.less']
+
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
