@@ -36,7 +36,7 @@ module Jekyll
             f.write(content)
           end
         rescue => e
-          STDERR.puts "Less Exception: #{e.message}"
+          STDERR.puts "Less Exception: #{e.message} in #{File.dirname(path)}"
         end
 
         true
@@ -58,7 +58,6 @@ module Jekyll
       def generate(site)
         site.static_files.clone.each do |sf|
           if sf.kind_of?(Jekyll::StaticFile) && sf.path =~ /\.less$/
-            site.static_files.delete(sf)
             @options["theme_files"].each do |tf|
               if sf.path.include? tf
                 name = File.basename(sf.path)
@@ -68,6 +67,11 @@ module Jekyll
                 site.static_files << less_file
               end
             end
+          end
+        end
+        site.static_files.clone.each do |sf|
+          if sf.kind_of?(Jekyll::StaticFile) && !sf.kind_of?(LessCssFile) && sf.path =~ /\.less$/
+            site.static_files.delete(sf)
           end
         end
       end

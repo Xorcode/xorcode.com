@@ -55,7 +55,7 @@ default_asides: []
 
 less:
   compress: true
-  theme_files: ['/css/theme_venera.less']
+  theme_files: ['/css/theme_venera.less','/css/theme_venera_blue.less','/css/theme_venera_white.less']
 
 # ----------------------- #
 #   3rd Party Settings    #
