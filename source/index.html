@@ -2,28 +2,159 @@
 layout: default
 ---
 
-<div class="blog-index">
-  {% assign index = true %}
-  {% for post in paginator.posts %}
-  {% assign content = post.content %}
-    <article>
-      {% include article.html %}
-    </article>
-  {% endfor %}
-  <div class="pagination">
-    {% if paginator.next_page %}
-      <a class="prev" href="{{paginator.next_page}}">&larr; Older</a>
-    {% endif %}
-    <a href="/blog/archives">Blog Archives</a>
-    {% if paginator.previous_page %}
-    <a class="next" href="{{paginator.previous_page}}">Newer &rarr;</a>
-    {% endif %}
+<div class="carousel slide over-something" id="homepage-carousel">
+  <div class="carousel-inner slider-w">
+    <div class="active item">
+      <div class="container">
+        <h1 class="slider-header">You started using tools <strong>800,000</strong> years ago</h1>
+        <h2 class="slider-sub-header">We write software that evolves your toolbox</h2>
+        <div class="cta">
+          <a href="features/pricing_tables.html" class="btn btn-cta">Let us help You</a>
+        </div>
+        <div class="slider-browsers-w clearfix">
+          <div class="slider-browser slider-browser-left hidden-phone" data-position-bottom="-8%">
+            <img alt="Browser-window-1" src="{{ root_url }}/img/browser-window.png" />
+          </div>
+          <div class="slider-browser slider-browser-center" data-position-bottom="-9%">
+            <img alt="Browser-window-2" src="{{ root_url }}/img/browser-window.png" />
+          </div>
+          <div class="slider-browser slider-browser-right hidden-phone" data-position-bottom="-8%">
+            <img alt="Browser-window-3" src="{{ root_url }}/img/browser-window.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="container">
+        <h1 class="slider-header">I am always on skype, feel free to ask questions.</h1>
+        <h2 class="slider-sub-header">Maecenas fermentum sem in nunc sagittis iaculis.</h2>
+        <div class="cta">
+          <a href="features/pricing_tables.html" class="btn btn-cta btn-warning">Some Action Button</a>
+        </div>
+        <div class="row zoomed-browsers-w">
+          <div class="span4">
+            <div class="zoomed-browser">
+              <img alt="Browser-window-1" src="{{ root_url }}/img/browser-window.png" />
+            </div>
+          </div>
+          <div class="span4">
+            <div class="zoomed-browser hidden-phone">
+              <img alt="Browser-window-2" src="{{ root_url }}/img/browser-window.png" />
+            </div>
+          </div>
+          <div class="span4">
+            <div class="zoomed-browser hidden-phone">
+              <img alt="Browser-window-3" src="{{ root_url }}/img/browser-window.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control left" data-slide="prev" href="#homepage-carousel">
+    <i class="icon-chevron-left"></i>
+  </a>
+  <a class="carousel-control right" data-slide="next" href="#homepage-carousel">
+    <i class="icon-chevron-right"></i>
+  </a>
+</div>
+<div class="sub-slider-features">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="info-bullet">
+          <i class="icon-file"></i>
+          <h5>Blog Pages Design</h5>
+          <p>Vestibulum placerat purus sed nunc tincidunt ultrices et. Vivamus pharetra aliquet nisi non pretium.</p>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="info-bullet">
+          <i class="icon-tags"></i>
+          <h5>Responsive Template</h5>
+          <p>Vestibulum placerat purus sed nunc tincidunt ultrices et. Vivamus pharetra aliquet nisi non pretium.</p>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="info-bullet">
+          <i class="icon-cogs"></i>
+          <h5>Easy to Customize</h5>
+          <p>Vestibulum placerat purus sed nunc tincidunt ultrices et. Vivamus pharetra aliquet nisi non pretium.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<aside class="sidebar">
-  {% if site.blog_index_asides.size %}
-    {% include_array blog_index_asides %}
-  {% else %}
-    {% include_array default_asides %}
-  {% endif %}
-</aside>
+
+<section class='section-wrapper stripped under-slider'>
+  <div class='container'>
+    <div class='row'>
+      <div class='span12'>
+        <h3 class='section-header'>From the Blog</h3>
+      </div>
+      <div class='span4'>
+        <div class='white-card recent-post clearfix'>
+          <h5 class='recent-post-header'>
+            <a href="blog/single_post.html">Nullam velit diam, rhoncus sed</a>
+          </h5>
+          <div class='post-info clearfix'>
+            <div class='pull-left'>
+              <span class='post-date'>January 15, 2011</span>
+              <a href="blog/single_post.html" class="post-comments">14 Comments</a>
+            </div>
+            <div class='pull-right'>
+              <a href="#" class="post-like"><i class='icon-heart'></i>
+                250
+              </a>
+            </div>
+          </div>
+          <img alt="Photo-card-big-1" class="post-image" src="{{ root_url }}/img/test-square.png" />
+          <p class='post-content separated'>Donec vel turpis non erat luctus ultrices vel sed massa. Quisque commodo venenatis arcu, non volutpat arcu lobortis at. Donec imperdiet nibh id metus adipiscing semper.</p>
+          <a href="blog/single_post.html" class="btn btn-primary btn-extra pull-right">Read More &gt;</a>
+        </div>
+      </div>
+      <div class='span4'>
+        <div class='white-card recent-post clearfix'>
+          <h5 class='recent-post-header'>
+            <a href="blog/single_post.html">Nullam velit diam, rhoncus sed</a>
+          </h5>
+          <div class='post-info clearfix'>
+            <div class='pull-left'>
+              <span class='post-date'>January 15, 2011</span>
+              <a href="blog/single_post.html" class="post-comments">14 Comments</a>
+            </div>
+            <div class='pull-right'>
+              <a href="#" class="post-like"><i class='icon-heart'></i>
+                250
+              </a>
+            </div>
+          </div>
+          <img alt="Photo-card-big-2" class="post-image" src="{{ root_url }}/img/test-square.png" />
+          <p class='post-content separated'>Donec vel turpis non erat luctus ultrices vel sed massa. Quisque commodo venenatis arcu, non volutpat arcu lobortis at. Donec imperdiet nibh id metus adipiscing semper.</p>
+          <a href="blog/single_post.html" class="btn btn-primary btn-extra pull-right">Read More &gt;</a>
+        </div>
+      </div>
+      <div class='span4'>
+        <div class='white-card recent-post clearfix'>
+          <h5 class='recent-post-header'>
+            <a href="blog/single_post.html">Nullam velit diam, rhoncus sed</a>
+          </h5>
+          <div class='post-info clearfix'>
+            <div class='pull-left'>
+              <span class='post-date'>January 15, 2011</span>
+              <a href="blog/single_post.html" class="post-comments">14 Comments</a>
+            </div>
+            <div class='pull-right'>
+              <a href="#" class="post-like"><i class='icon-heart'></i>
+                250
+              </a>
+            </div>
+          </div>
+          <img alt="Photo-card-big-6" class="post-image" src="{{ root_url }}/img/test-square.png" />
+          <p class='post-content separated'>Donec vel turpis non erat luctus ultrices vel sed massa. Quisque commodo venenatis arcu, non volutpat arcu lobortis at. Donec imperdiet nibh id metus adipiscing semper.</p>
+          <a href="blog/single_post.html" class="btn btn-primary btn-extra pull-right post-btn">Read More &gt;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

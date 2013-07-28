@@ -1,30 +1,78 @@
 <!-- NAVIGATION -->
-<div class="navbar">
-  <div class="navbar-inner">
-    <div class="container">
-      <!-- nav collapse button -->
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <!-- logotype -->
-      <a class="brand" href="{{ root_url }}/"></a>
-      <!-- main menu -->
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li><a href="{{ root_url }}/">Home</a></li>
-          <li><a href="{{ root_url }}/services.html">Services</a></li>
-          <li><a href="{{ root_url }}/about.html">About</a></li>
-        </ul>
-      </div>
-      <!-- topics menu -->
-      <div class="nav-collapse collapse">
-        <ul class="nav pull-right">
-          <li class="header"><span>topics <i class="icon-rss"></i></span></li>
-          {% category_list icon:true %}
-        </ul>
+<header id="header">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a href="{{ root_url }}/" class="brand">Xorcode</a>
+        <div class="nav-collapse subnav-collapse collapse pull-right" id="top-navigation">
+          <ul class="nav">
+            <li class="active">
+              <a href="{{ root_url }}/">Home</a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="features/pricing_tables.html">Pricing Table</a>
+                </li>
+                <li>
+                  <a href="features/awesome_icons.html">Awesome Icons</a>
+                </li>
+                <li>
+                  <a href="features/basic_elements.html">Basic Elements</a>
+                </li>
+                <li class="divider"></li>
+                <li class="nav-header">Pages Examples</li>
+                <li>
+                  <a href="features/about_us_page.html">About Us Page</a>
+                </li>
+                <li>
+                  <a href="gallery_of_images.html">Gallery of Images</a>
+                </li>
+                <li>
+                  <a href="features/not_found_page.html">Page not found</a>
+                </li>
+                <li>
+                  <a href="features/coming_soon_page.html">Coming Soon Page</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog</a>
+              <ul class="dropdown-menu topics">
+                {% category_list icon:true %}
+              </ul>
+            </li>
+            <li class="">
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+          <div class="top-account-control visible-desktop">
+            <a href="features/pricing_tables.html" class="top-create-account">Create Account</a>
+            <a href="#" class="top-sign-in">Sign In</a>
+            <div class="login-box">
+              <a class="close login-box-close" href="#">&times;</a>
+              <h4 class="login-box-head">Login Form</h4>
+              <div class="control-group">
+                <label>Username</label>
+                <input class="span2" placeholder="Input username..." type="text">
+              </div>
+              <div class="control-group">
+                <label>Password</label>
+                <input class="span2" placeholder="Input password..." type="text">
+              </div>
+              <div class="login-actions">
+                <button class="btn btn-primary">Log Me In</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</header>
