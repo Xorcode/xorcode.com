@@ -7,21 +7,14 @@ author: Torgny Bjers
 author_login: tbjers
 author_email: tbjers@xorcode.com
 author_url: http://xorcode.com/
-excerpt: ! "Zend Framework has a straightforward setup process providing that the
-  developer sets everything up manually. This guide illustrates how to set up a modular
-  installation of Zend Framework.\r\n"
-wordpress_id: 256
-wordpress_url: http://xorcode.com/?p=256
 date: 2011-03-31 20:35:22.000000000 -04:00
-categories:
-- Code
-tags:
-- web
-- zend
-- php
+categories: [Code]
+tags: [web,zend,php]
 ---
 
 Zend Framework has a straightforward setup process providing that the developer sets everything up manually. This guide illustrates how to set up a modular installation of Zend Framework.
+
+<!--more-->
 
 > ![Zend Framework](/uploads/2011/03/zf-logo-mark1.png) Extending the art and spirit of PHP, Zend Framework is based on simplicity, object-oriented best practices, corporate friendly licensing, and a rigorously tested agile codebase.
 

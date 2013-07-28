@@ -105,7 +105,7 @@ module Jekyll
         url = category_dir + name
         html << "<li><a href='#{url}'>"
         if @opts['icon']
-          html << "<i class='icon-#{name}'></i>"
+          html << "<i class='icon-#{name}'></i> "
         end
         html << "#{category}"
         if @opts['counter']

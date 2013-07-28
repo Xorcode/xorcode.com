@@ -7,19 +7,15 @@ author: Torgny Bjers
 author_login: tbjers
 author_email: tbjers@xorcode.com
 author_url: http://xorcode.com/
-excerpt: Set up a scalable server farm in less than 10 minutes with Amazon Elastic
-  Compute Cloud utilizing Elastic Load Balancing and Auto Scaling.
-wordpress_id: 39
-wordpress_url: http://blog.xorcode.com/?p=39
 date: 2011-03-27 13:45:04.000000000 -04:00
-categories:
-- Cloud
-tags:
-- ec2
-- amazon
+categories: [Cloud]
+tags: [ec2,amazon]
 ---
 
-Set up a scalable server farm in less than 10 minutes with Amazon Elastic Compute Cloud utilizing Elastic Load Balancing and Auto Scaling.<a id="more"></a><a id="more-39"></a>
+Set up a scalable server farm in less than 10 minutes with Amazon Elastic Compute Cloud utilizing Elastic Load Balancing and Auto Scaling.
+
+<!--more-->
+
 <blockquote><img class="alignright size-full wp-image-93" title="Amazon Web Services" src="/uploads/2011/03/aws_logo.png" alt="" width="164" height="67" />Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale computing easier for developers.</blockquote>
 If you have used EC2 at all you must have wondered how you can automate the creation of instances in your load balancer. So did we. After much searching and various testing back and forth we came up with the following solution.
 

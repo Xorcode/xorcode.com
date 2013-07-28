@@ -7,22 +7,15 @@ author: Torgny Bjers
 author_login: tbjers
 author_email: tbjers@xorcode.com
 author_url: http://xorcode.com/
-excerpt: ! "We discovered <a href=\"http://xorcode.net/ejFgVg\" target=\"_blank\">Solarized</a>
-  by Ethan Schoonover and instantly fell in love with its <em>\"precision colors for
-  machines and people.\"</em> Having read up on its properties and unique features
-  we decided to try to make our Ubuntu systems use it as extensively as possible.\r\n"
-wordpress_id: 403
-wordpress_url: http://xorcode.com/?p=403
 date: 2011-04-11 16:59:17.000000000 -04:00
 comments: true
-categories:
-- Linux
-tags:
-- eclipse
-- ubuntu
+categories: [Linux]
+tags: [eclipse,ubuntu]
 ---
 
 We discovered [Solarized](http://xorcode.net/ejFgVg) by Ethan Schoonover and instantly fell in love with its *"precision colors for machines and people."* Having read up on its properties and unique features we decided to try to make our Ubuntu systems use it as extensively as possible.
+
+<!--more-->
 
 > ![Solarized -- Precision colors for machines and people](/uploads/2011/04/solarized-yinyang-150x150.png) Solarized is a sixteen color palette (eight monotones, eight accent colors) designed for use with terminal and gui applications. It has several [unique properties](http://xorcode.net/fK0voM). I [Ethan Schoonover] designed this colorscheme with both precise [CIELAB](http://xorcode.net/ezzkDl) lightness relationships and a refined set of hues based on fixed color wheel relationships.
 

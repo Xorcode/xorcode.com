@@ -3,11 +3,12 @@ layout: post
 title: "Google Beats Bing on Programming Questions"
 description: ""
 categories: Tidbits
-excerpt: If you have been keeping up with the search engines of late you probably know that Bing has challenged Googe to a Side-by-Side Search Off. We took the challenge and decided to search for things that matter the most to us, such as programming related questions.
 tags: [google,bing,seo]
 ---
 
 If you have been keeping up with the search engines of late you probably know that Bing has challenged Googe to a [Side-by-Side Search Off]({{ 'http://www.bingiton.com/' | bitly }}). We took the challenge and decided to search for things that matter the most to us, such as programming related questions.
+
+<!--more-->
 
 ![Bing It On!](/uploads/2012/09/bing-vs-google.jpg)
 

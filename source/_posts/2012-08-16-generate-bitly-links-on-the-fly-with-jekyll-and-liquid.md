@@ -2,13 +2,14 @@
 layout: post
 title: "Jekyll: Generate Bit.ly Links on The Fly with Liquid"
 description: "Generate Bit.ly Links on The Fly with Liquid in Jekyll"
-excerpt: We needed a quick way of generating shortened links in our articles. Since we already use bit.ly we figured that would be the best choice and there are several Ruby scripts and gems available. We picked one that is actively developed, appears stable, as well as has support for bit.ly API V3.
 comments: true
 categories: Code
 tags: [jekyll,liquid,bitly]
 ---
 
 We needed a quick way of generating shortened links in our articles. Since we already use [bit.ly](http://bit.ly/) we figured that would be the best choice and there are several Ruby scripts and gems available. We picked one that is actively developed, appears stable, as well as has support for [bit.ly API V3](http://dev.bitly.com/data_apis.html).
+
+<!--more-->
 
 > ![bit.ly puffin](/uploads/2012/08/bitly.png) bitly is the easiest and most fun way to save, share and discover links from around the web. We call these links bitmarks, and you can use bitly to remember, curate and share them.
 

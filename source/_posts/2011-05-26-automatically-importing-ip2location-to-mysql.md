@@ -7,20 +7,14 @@ author: Torgny Bjers
 author_login: tbjers
 author_email: tbjers@xorcode.com
 author_url: http://xorcode.com/
-excerpt: ! "Have you ever found that you need to know where in the world a user happens
-  to browse from? We did, and we tried several API services that proved to be unreliable
-  and also created overhead when an API call was placed for each visitor of the site.\r\n"
-wordpress_id: 468
-wordpress_url: http://xorcode.com/?p=468
 date: 2011-05-26 15:23:06.000000000 -04:00
-categories:
-- Code
-tags:
-- web
-- php
+categories: [Code]
+tags: [web,php]
 ---
 
 Have you ever found that you need to know where in the world a user happens to browse from? We did, and we tried several API services that proved to be unreliable and also created overhead when an API call was placed for each visitor of the site.
+
+<!--more-->
 
 > ![Globe](/uploads/2011/05/globe-150x150.png) [IP2Location](http://xorcode.net/jdBHWg) is a geo IP solution to help you to identify visitor's geographical location, such as country, region, city, latitude, longitude, ZIP code, time zone, connection speed, ISP and domain name, IDD country code, area code, weather station code and name, and mobile carrier information using a proprietary IP address lookup database and technology without invading the Internet user's privacy.
 

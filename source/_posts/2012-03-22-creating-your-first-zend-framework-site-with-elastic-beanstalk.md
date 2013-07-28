@@ -7,23 +7,14 @@ author: Torgny Bjers
 author_login: tbjers
 author_email: tbjers@xorcode.com
 author_url: http://xorcode.com/
-excerpt: ! "Trying out the new feature of AWS Elastic Beanstalk we created and deployed
-  a Zend Framework PHP project to Elastic Beanstalk in less than five minutes using
-  git.\r\n"
-wordpress_id: 502
-wordpress_url: http://xorcode.com/?p=502
 date: 2012-03-22 19:22:04.000000000 -04:00
-categories:
-- Cloud
-- Code
-tags:
-- amazon
-- php
-- aws
-- elastic beanstalk
+categories: [Cloud,Code]
+tags: [amazon,php,aws,elastic beanstalk]
 ---
 
 Trying out the new feature of AWS Elastic Beanstalk we created and deployed a Zend Framework PHP project to Elastic Beanstalk in less than five minutes using git.
+
+<!--more-->
 
 > ![Elastic Beanstalk](/uploads/2012/03/beanstalk.png) AWS Elastic Beanstalk is an even easier way for you to quickly deploy and manage applications in the AWS cloud. You simply upload your application, and Elastic Beanstalk automatically handles the deployment details of capacity provisioning, load balancing, auto-scaling, and application health monitoring.
 

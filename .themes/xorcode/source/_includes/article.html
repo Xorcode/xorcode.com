@@ -1,28 +1,67 @@
-{% unless page.no_header %}
-  <header>
-    {% if index %}
-      <h1 class="entry-title"><a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a></h1>
-    {% else %}
-      <h1 class="entry-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
-    {% endif %}
-    {% unless page.meta == false %}
-      <p class="meta">
-        {% include post/date.html %}{{ time }}
-        {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
-         | <a href="{% if index %}{{ root_url }}{{ post.url }}{% endif %}#disqus_thread">Comments</a>
-        {% endif %}
-      </p>
-    {% endunless %}
-  </header>
-{% endunless %}
 {% if index %}
-  <div class="entry-content">{{ content | excerpt }}</div>
-  {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
-  {% if excerpted == 'true' %}
-    <footer>
-      <a rel="full-article" href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a>
-    </footer>
-  {% endif %}
+  <div class="white-card recent-post clearfix">
+    {% unless page.no_header %}
+      <h5 class="recent-post-header">
+        <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
+      </h5>
+      <div class="post-info clearfix">
+        <div class="pull-left">
+          <span class="post-date">{% include post/date.html %}{{ date_formatted }}</span>
+          {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
+          <a href="{{ root_url }}{{ post.url }}#disqus_thread" class="post-comments">0 Comments</a>
+          {% endif %}
+        </div>
+        <div class="pull-right">
+          <a href="#" class="post-like"><i class="icon-heart"></i>
+            0
+          </a>
+        </div>
+      </div>
+    {% endunless %}
+    <img alt="Photo-card-big-1" class="post-image" src="/img/test-square.png" />
+    <p class="post-content separated">{{ content | excerpt }}</p>
+    {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
+    {% if excerpted == 'true' %}
+      <a href="{{ root_url }}{{ post.url }}" class="btn btn-primary btn-extra pull-right">{{ site.excerpt_link }}</a>
+    {% endif %}
+  </div>
 {% else %}
-<div class="entry-content">{{ content }}</div>
+  <div class="single-post-w">
+    {% unless page.no_header %}
+      <h1 class="post-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
+      {% unless page.meta == false %}
+        <p class="post-info">
+          {% unless post.tags.length == 0 %}
+            <span class="info-item">
+              Tags:
+              <a href="#" class="post-tag">
+                <span class="label label-info">buy</span>
+              </a>
+              <a href="#" class="post-tag">
+                <span class="label label-info">this</span>
+              </a>
+              <a href="#" class="post-tag">
+                <span class="label label-info">theme</span>
+              </a>
+            </span>
+          {% endunless %}
+          <span class="info-item">
+            by
+            <a href="#">Mario Bolatelli</a>
+          </span>
+          <span class="info-item">{% include post/date.html %}{{ date_formatted }}</span>
+          {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
+            <span class="info-item">
+              <a href="{{ root_url }}{{ post.url }}#disqus_thread" class="post-comments">0 Comments</a>
+            </span>
+          {% endif %}
+        </p>
+        {% endunless %}
+    {% endunless %}
+    <div class='single-post-image bottom decor-image'>
+      <img src="{{ root_url }}/img/photos/image-placeholder-1.jpg" />
+    </div>
+    <div class="post-content">{{ content }}</div>
+  </div>
+  {% include post/author.html %}
 {% endif %}
