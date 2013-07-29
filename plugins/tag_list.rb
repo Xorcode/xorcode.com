@@ -46,9 +46,18 @@ module Jekyll
 
     def initialize(tag_name, markup, tokens)
       @opts = {}
+      @opts['limit'] = 10
       if markup.strip =~ /\s*counter:(\w+)/iu
         @opts['counter'] = ($1 == 'true')
         markup = markup.strip.sub(/counter:\w+/iu,'')
+      end
+      if markup.strip =~ /\s*limit:(\d+)/iu
+        @opts['limit'] = $1.to_i
+        markup = markup.strip.sub(/limit:\d+/iu,'')
+      end
+      if markup.strip =~ /\s*class:([\w_-]+)/iu
+        @opts['class'] = $1
+        markup = markup.strip.sub(/class:[\w_-]+/iu,'')
       end
       super
     end
@@ -66,14 +75,23 @@ module Jekyll
       end
 
       html = ''
-      lists.each do | tag, counter |
+      lists.sort_by{ |tag, counter| counter }.reverse.take(@opts['limit']).each do | tag, counter |
         url = tag_dir + tag.gsub(/_|\P{Word}/u, '-').gsub(/-{2,}/u, '-').downcase
         style = "font-size: #{100 + (60 * Float(counter)/max)}%"
-        html << "<a href='#{url}' style='#{style}'>#{tag}"
-        if @opts['counter']
-          html << "(#{tags[tag].count})"
+
+        if @opts['class'].length > 0
+          html << "<li><a href='#{url}' class='#{@opts['class']}' style='#{style}'>"
+        else 
+          html << "<li><a href='#{url}' style='#{style}'>"
         end
-        html << "</a> "
+        if @opts['icon']
+          html << "<i class='icon-#{name}'></i> "
+        end
+        html << "#{tag}"
+        if @opts['counter']
+          html << " (#{tags[tag].count})"
+        end
+        html << "</a></li>"
       end
       html
     end
@@ -90,6 +108,10 @@ module Jekyll
       if markup.strip =~ /\s*icon:(\w+)/iu
         @opts['icon'] = ($1 == 'true')
         markup = markup.strip.sub(/icon:\w+/iu,'')
+      end
+      if markup.strip =~ /\s*limit:(\d+)/iu
+        @opts['limit'] = $1
+        markup = markup.strip.sub(/limit:\d+/iu,'')
       end
       if markup.strip =~ /\s*class:([\w_-]+)/iu
         @opts['class'] = $1
