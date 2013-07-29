@@ -2,7 +2,7 @@
   <div class="pre-footer">
     <div class="container">
       <div class="row">
-        <div class="span4">
+        <div class="span3">
           <div class="footer-logo">
             <a><strong>Xorcode</strong>, LLC</a>
           </div>
@@ -18,59 +18,24 @@
             </li>
           </ul>
         </div>
-        <div class="span4">
+        <div class="span5">
           <h5 class="footer-header">Recent Posts</h5>
           <ul class="footer-list">
-            {% for post in site.posts limit:site.recent_posts %}
+            {% capture posts_offset %}{% if index %}6{% else %}0{% endif %}{% endcapture %}
+            {% for post in site.posts offset:posts_offset limit:site.recent_posts %}
               <li>
                 <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
               </li>
             {% endfor %}
           </ul>
         </div>
-        <div class="span4">
-          <h5 class="footer-header">Photostream</h5>
-          <ul class="footer-img-list thumbnails">
-            <li class="span1">
-              <a class="thumbnail">
-                <img alt="8b9890" src="{{ root_url }}/img/test-square.png" />
-              </a>
-            </li>
-            <li class="span1">
-              <a class="thumbnail">
-                <img alt="8b9890" src="{{ root_url }}/img/test-square.png" />
-              </a>
-            </li>
-            <li class="span1">
-              <a class="thumbnail">
-                <img alt="8b9890" src="{{ root_url }}/img/test-square.png" />
-              </a>
-            </li>
-            <li class="span1">
-              <a class="thumbnail">
-                <img alt="8b9890" src="{{ root_url }}/img/test-square.png" />
-              </a>
-            </li>
-            <li class="span1">
-              <a class="thumbnail">
-                <img alt="8b9890" src="{{ root_url }}/img/test-square.png" />
-              </a>
-            </li>
-            <li class="span1">
-              <a class="thumbnail">
-                <img alt="8b9890" src="{{ root_url }}/img/test-square.png" />
-              </a>
-            </li>
-            <li class="span1">
-              <a class="thumbnail">
-                <img alt="8b9890" src="{{ root_url }}/img/test-square.png" />
-              </a>
-            </li>
-            <li class="span1">
-              <a class="thumbnail">
-                <img alt="8b9890" src="{{ root_url }}/img/test-square.png" />
-              </a>
-            </li>
+        <div class="span3 offset1">
+          <h5 class="footer-header">Connect With Us</h5>
+          <ul class="footer-list unstyled">
+            <li><a href="{{ 'https://github.com/Xorcode' | bitly }}"><i class="icon-github-sign"></i> Github</a></li>
+            <li><a href="{{ 'https://twitter.com/xorcode' | bitly }}"><i class="icon-twitter-sign"></i> Twitter</a></li>
+            <li><a href="{{ 'http://www.linkedin.com/company/xorcode-llc' | bitly }}"><i class="icon-linkedin-sign"></i> LinkedIn</a></li>
+            <li><a href="{{ 'http://www.facebook.com/xorcode' | bitly }}"><i class="icon-facebook-sign"></i> Facebook</a></li>
           </ul>
         </div>
       </div>

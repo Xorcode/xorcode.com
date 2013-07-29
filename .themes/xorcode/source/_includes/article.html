@@ -37,12 +37,12 @@
               Tags: {{ page.tags | tag_links }}
             </span>
           {% endunless %}
-          <span class="info-item">{% include post/date.html %}{{ date_formatted }}</span>
           {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
             <span class="info-item">
               <a href="{{ root_url }}{{ post.url }}#disqus_thread" class="post-comments">0 Comments</a>
             </span>
           {% endif %}
+          <span class="info-item last">{% include post/date.html %}{{ date_formatted }}</span>
         </p>
         {% endunless %}
     {% endunless %}
