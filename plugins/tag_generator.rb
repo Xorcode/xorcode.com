@@ -129,7 +129,7 @@ ERR
 
 
   # Jekyll hook - the generate method is called by jekyll, and generates all of the tag pages.
-  class GenerateCategories < Generator
+  class GenerateTags < Generator
     safe true
     priority :low
 
@@ -159,7 +159,7 @@ ERR
       when 1
         tags[0].to_s
       else
-        "#{tags[0...-1].join(', ')}, #{tags[-1]}"
+        "#{tags.join(' ')}"
       end
     end
 
@@ -171,7 +171,7 @@ ERR
     #
     def tag_link(tag)
       dir = @context.registers[:site].config['tag_dir']
-      "<a class='tag' href='/#{dir}/#{tag.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase}/'>#{tag}</a>"
+      "<a href='/#{dir}/#{tag.gsub(/_|\P{Word}/, '-').gsub(/-{2,}/, '-').downcase}/'><span class='label label-info'>#{tag}</span></a>"
     end
 
     # Outputs the post.date as formatted html, with hooks for CSS styling.

@@ -31,24 +31,11 @@
       <h1 class="post-title">{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}</h1>
       {% unless page.meta == false %}
         <p class="post-info">
-          {% unless post.tags.length == 0 %}
+          {% unless page.tags.length == 0 %}
             <span class="info-item">
-              Tags:
-              <a href="#" class="post-tag">
-                <span class="label label-info">buy</span>
-              </a>
-              <a href="#" class="post-tag">
-                <span class="label label-info">this</span>
-              </a>
-              <a href="#" class="post-tag">
-                <span class="label label-info">theme</span>
-              </a>
+              Tags: {{ page.tags | tag_links }}
             </span>
           {% endunless %}
-          <span class="info-item">
-            by
-            <a href="#">Mario Bolatelli</a>
-          </span>
           <span class="info-item">{% include post/date.html %}{{ date_formatted }}</span>
           {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
             <span class="info-item">
