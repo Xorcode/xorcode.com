@@ -37,11 +37,6 @@
   $("body").on("touchstart.dropdown", ".dropdown-menu", function(e) {
     return e.stopPropagation();
   });
-  var highestCol = 0;
-  $(".white-card").each(function() {
-    if ($(this).height() > highestCol) highestCol = $(this).height();
-  });
-  $(".white-card").height(highestCol);
   return $(document).on("click", ".dropdown-menu a", function() {
     return document.location = $(this).attr("href");
   });

@@ -18,9 +18,10 @@
         </div>
       </div>
     {% endunless %}
-    <img alt="Photo-card-big-1" class="post-image" src="/img/test-square.png" />
-    <p class="post-content separated">{{ content | excerpt }}</p>
-    {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
+    {% if post.index_image %}
+      <img class="post-image" src="{{ root_url }}{{ post.square_image }}" />
+    {% endif %}
+    <p class="post-content{% if post.index_image %} separated{% endif %}">{{ content | excerpt }}{% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}</p>
     {% if excerpted == 'true' %}
       <a href="{{ root_url }}{{ post.url }}" class="btn btn-primary btn-extra pull-right">{{ site.excerpt_link }}</a>
     {% endif %}
@@ -45,9 +46,11 @@
         </p>
         {% endunless %}
     {% endunless %}
-    <div class='single-post-image bottom decor-image'>
-      <img src="{{ root_url }}/img/photos/image-placeholder-1.jpg" />
-    </div>
+    {% if post.decor_image %}
+      <div class="single-post-image bottom decor-image">
+        <img src="{{ root_url }}{{ post.decor_image }}" />
+      </div>
+    {% endif %}
     <div class="post-content">{{ content }}</div>
   </div>
   {% include post/author.html %}
