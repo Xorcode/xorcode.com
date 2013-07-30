@@ -7,7 +7,7 @@ categories: [Code,Cloud]
 tags: [jekyll,amazon,cloudfront,ruby,jekyll-bootstrap]
 ---
 
-We decided to use [Amazon CloudFront](http://xorcode.net/R2fO1q) as a CDN to deliver media assets of our site. This seemed easy enough until we looked into how Jekyll-Bootstrap is written. For all intents and purposes, Jekyll-Bootstrap uses safe mode to indicate production. Though that would mean that none of our plugins would be used when deploying.
+We decided to use [Amazon CloudFront](http://xorcode.net/R2fO1q) as a <abbr title="Content Delivery Network">CDN</abbr> to deliver media assets of our site. This seemed easy enough until we looked into how Jekyll-Bootstrap is written. For all intents and purposes, Jekyll-Bootstrap uses safe mode to indicate production. Though that would mean that none of our plugins would be used when deploying.
 
 <!--more-->
 

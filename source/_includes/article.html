@@ -8,7 +8,7 @@
         <div class="pull-left">
           <span class="post-date">{% include post/date.html %}{{ date_formatted }}</span>
           {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
-          <a href="{{ root_url }}{{ post.url }}#disqus_thread" class="post-comments">0 Comments</a>
+            <a href="{{ root_url }}{{ post.url }}#disqus_thread" class="post-comments">0 Comments</a>
           {% endif %}
         </div>
         <div class="pull-right">
