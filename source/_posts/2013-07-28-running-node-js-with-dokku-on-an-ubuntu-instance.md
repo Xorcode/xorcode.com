@@ -64,4 +64,4 @@ This will initialize the deployment process and bootstrap your Node.js applicati
 
 Once your application has been deployed, it will start responding on **http://node-js-app.example.org**.
 
-For more information, please see the [Dokku]({{ 'https://github.com/progrium/dokku' | bitly }}) project on Github.
+Please see the [Dokku]({{ 'https://github.com/progrium/dokku' | bitly }}) project on Github for more information.
