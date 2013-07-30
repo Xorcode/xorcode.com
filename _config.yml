@@ -81,7 +81,7 @@ bitly_user: xorcode
 bitly_key: R_b0b9b280be9a10ca4165d7c47574440d
 
 # Github repositories
-github_user: xorcode
+github_user: Xorcode
 github_repo_count: 5
 github_show_profile_link: true
 github_skip_forks: true
