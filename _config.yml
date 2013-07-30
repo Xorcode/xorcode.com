@@ -60,6 +60,18 @@ less:
   compress: true
   theme_files: ['/css/theme_venera.less','/css/theme_venera_blue.less','/css/theme_venera_white.less']
 
+asset_bundler:
+  compress:
+    js: false
+    css: false
+  base_path: /bundles/
+  server_url:
+  remove_bundled: false
+  dev: false
+  markup_templates:
+    js: "<script type='text/javascript' src='{{url}}'></script>\n"
+    css: "<link media='all' rel='stylesheet' type='text/css' href='{{url}}' />\n"
+
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #

@@ -13,6 +13,7 @@ group :development do
   gem 'stringex', '~> 1.4.0'
   gem 'liquid', '~> 2.3.0'
   gem 'bitly', '~> 0.9.0'
+  gem 'closure-compiler', '~> 1.1.10'
 end
 
 gem 'therubyracer'
