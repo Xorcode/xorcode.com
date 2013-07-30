@@ -3,10 +3,6 @@ layout: post
 status: publish
 published: true
 title: Setting up Zend Framework -- Part 1
-author: Torgny Bjers
-author_login: tbjers
-author_email: tbjers@xorcode.com
-author_url: http://xorcode.com/
 date: 2011-03-31 20:35:22.000000000 -04:00
 categories: [Code]
 tags: [web,zend,php]

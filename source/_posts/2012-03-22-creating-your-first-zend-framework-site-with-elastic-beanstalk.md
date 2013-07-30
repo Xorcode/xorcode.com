@@ -3,10 +3,6 @@ layout: post
 status: publish
 published: true
 title: Creating your first Zend Framework site with Elastic Beanstalk
-author: Torgny Bjers
-author_login: tbjers
-author_email: tbjers@xorcode.com
-author_url: http://xorcode.com/
 date: 2012-03-22 19:22:04.000000000 -04:00
 categories: [Cloud,Code]
 tags: [amazon,php,aws,elastic beanstalk]

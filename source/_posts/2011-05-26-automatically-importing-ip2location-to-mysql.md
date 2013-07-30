@@ -3,10 +3,6 @@ layout: post
 status: publish
 published: true
 title: Automatically importing IP2Location to MySQL
-author: Torgny Bjers
-author_login: tbjers
-author_email: tbjers@xorcode.com
-author_url: http://xorcode.com/
 date: 2011-05-26 15:23:06.000000000 -04:00
 categories: [Code]
 tags: [web,php]

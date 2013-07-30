@@ -3,10 +3,6 @@ layout: post
 status: publish
 published: true
 title: Auto-Scaling with EC2
-author: Torgny Bjers
-author_login: tbjers
-author_email: tbjers@xorcode.com
-author_url: http://xorcode.com/
 date: 2011-03-27 13:45:04.000000000 -04:00
 categories: [Cloud]
 tags: [ec2,amazon]

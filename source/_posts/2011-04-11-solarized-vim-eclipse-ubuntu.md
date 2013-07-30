@@ -3,10 +3,6 @@ layout: post
 status: publish
 published: true
 title: Using Solarized colors with vim, Eclipse, and Ubuntu
-author: Torgny Bjers
-author_login: tbjers
-author_email: tbjers@xorcode.com
-author_url: http://xorcode.com/
 date: 2011-04-11 16:59:17.000000000 -04:00
 comments: true
 categories: [Linux]
