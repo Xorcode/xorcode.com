@@ -7,6 +7,7 @@ date: 2011-04-11 16:59:17.000000000 -04:00
 comments: true
 categories: [Linux]
 tags: [eclipse,ubuntu]
+alias: [/guides/solarized-vim-eclipse-ubuntu]
 ---
 
 We discovered [Solarized](http://xorcode.net/ejFgVg) by Ethan Schoonover and instantly fell in love with its *"precision colors for machines and people."* Having read up on its properties and unique features we decided to try to make our Ubuntu systems use it as extensively as possible.
@@ -27,17 +28,11 @@ We discovered [Solarized](http://xorcode.net/ejFgVg) by Ethan Schoonover and ins
 
 ### New method
 
-<span class="label label-info">Updated</span> Tim Martin supplied a script that will set your terminal colors directly from the terminal. Copy and paste the following directly into your terminal and the color scheme will be updated instantly.
+<span class="label label-info">Updated</span> Jeff from Codefork.com supplied a shell script version of Tim Martin's script that will set your terminal colors to Solarized dark or light from the command line. Save the contents of this gist as solarize.sh:
 
-{% highlight bash %}
-gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_background" --type bool false
-gconftool-2 --set "/apps/gnome-terminal/profiles/Default/use_theme_colors" --type bool false
-gconftool-2 --set "/apps/gnome-terminal/profiles/Default/palette" --type string "#070736364242:#D3D301010202:#858599990000:#B5B589890000:#26268B8BD2D2:#D3D336368282:#2A2AA1A19898:#EEEEE8E8D5D5:#00002B2B3636:#CBCB4B4B1616:#58586E6E7575:#65657B7B8383:#838394949696:#6C6C7171C4C4:#9393A1A1A1A1:#FDFDF6F6E3E3"
-gconftool-2 --set "/apps/gnome-terminal/profiles/Default/background_color" --type string "#00002B2B3636"
-gconftool-2 --set "/apps/gnome-terminal/profiles/Default/foreground_color" --type string "#65657B7B8383"
-{% endhighlight %}
+{% gist 1397104/solarize.sh %}
 
-<a class="btn btn-js" href="http://xorcode.net/OrfzgP">View the Gist</a>
+Before running this script please make a new copy of your current terminal profile in the "Edit" > "Profiles" menu in case you want to switch back later. To use this script, paste this file into your home folder as `solarize.sh` and then run `chmod +x solarize.sh`.
 
 ### Old Method
 
