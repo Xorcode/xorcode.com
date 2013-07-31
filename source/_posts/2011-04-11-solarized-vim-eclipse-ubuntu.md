@@ -34,28 +34,6 @@ We discovered [Solarized](http://xorcode.net/ejFgVg) by Ethan Schoonover and ins
 
 Before running this script please make a new copy of your current terminal profile in the "Edit" > "Profiles" menu in case you want to switch back later. To use this script, paste this file into your home folder as `solarize.sh` and then run `chmod +x solarize.sh`.
 
-### Old Method
-
-<span class="label label-warning">Deprecated!</span> Gnome Terminal can be a bit tricky to colorize since the application cannot import color profiles/themes. The easiest way of getting Solarized to work with Gnome Terminal includes some light work in the Gnome Configuration Editor, `gconf-editor`.
-
-Start the configuration editor by hitting ALT+F2 and typing `gconf-editor`.
-
-Open up the following folder in the configuration: `/apps/gnome-terminal/profiles/Default`
-
-Uncheck `use_theme_background` and `use_theme_colors`.
-
-Find `palette` and change the value as illustrated below:
-
-{% highlight xml %}#070736364242:#D3D301010202:#858599990000:#B5B589890000:#26268B8BD2D2:#D3D336368282:#2A2AA1A19898:#EEEEE8E8D5D5:#00002B2B3636:#CBCB4B4B1616:#58586E6E7575:#65657B7B8383:#838394949696:#6C6C7171C4C4:#9393A1A1A1A1:#FDFDF6F6E3E3{% endhighlight %}
-
-Change the value of `background_color` as illustrated below:
-
-{% highlight xml %}#00002B2B3636{% endhighlight %}
-
-Finally change the value of `foreground_color` as illustrated below:
-
-{% highlight xml %}#65657B7B8383{% endhighlight %}
-
 ## Vim
 
 Close down Vim and copy the `solarized.vim` file into your Vim settings directory:
