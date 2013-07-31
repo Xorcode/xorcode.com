@@ -11,7 +11,7 @@ We needed a quick way of generating shortened links in our articles. Since we al
 
 <!--more-->
 
-> ![bit.ly puffin](/uploads/2012/08/bitly.png) bitly is the easiest and most fun way to save, share and discover links from around the web. We call these links bitmarks, and you can use bitly to remember, curate and share them.
+> <img src="/uploads/2012/08/bitly.png" class="pull-right"> bitly is the easiest and most fun way to save, share and discover links from around the web. We call these links bitmarks, and you can use bitly to remember, curate and share them.
 
 First you have to install the [Bit.ly gem]({{ 'https://github.com/philnash/bitly' | bitly }}):
 

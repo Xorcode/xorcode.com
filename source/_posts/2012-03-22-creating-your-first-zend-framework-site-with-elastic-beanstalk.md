@@ -12,7 +12,7 @@ Trying out the new feature of AWS Elastic Beanstalk we created and deployed a Ze
 
 <!--more-->
 
-> ![Elastic Beanstalk](/uploads/2012/03/beanstalk.png) AWS Elastic Beanstalk is an even easier way for you to quickly deploy and manage applications in the AWS cloud. You simply upload your application, and Elastic Beanstalk automatically handles the deployment details of capacity provisioning, load balancing, auto-scaling, and application health monitoring.
+> <img src="/uploads/2012/03/beanstalk.png" class="pull-right" style="height:125px;"> AWS Elastic Beanstalk is an even easier way for you to quickly deploy and manage applications in the AWS cloud. You simply upload your application, and Elastic Beanstalk automatically handles the deployment details of capacity provisioning, load balancing, auto-scaling, and application health monitoring.
 
 We decided to try with a clean copy of Zend Framework to determine what we had to do to get one of our PHP Zend Framework powered sites up and running successfully on [Elastic Beanstalk](http://aws.amazon.com/elasticbeanstalk/). Using the Zend Studio project creation wizard we set up HelloWorld.
 

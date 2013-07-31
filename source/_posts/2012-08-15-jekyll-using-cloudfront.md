@@ -11,7 +11,7 @@ We decided to use [Amazon CloudFront](http://xorcode.net/R2fO1q) as a <abbr titl
 
 <!--more-->
 
-> ![Amazon CloudFront](/uploads/2012/08/cloudfront.png) Amazon CloudFront is a web service for content delivery. It integrates with other Amazon Web Services to give developers and businesses an easy way to distribute content to end users with low latency, high data transfer speeds, and no commitments.
+> <img src="/uploads/2012/08/cloudfront.png" class="pull-right"> Amazon CloudFront is a web service for content delivery. It integrates with other Amazon Web Services to give developers and businesses an easy way to distribute content to end users with low latency, high data transfer speeds, and no commitments.
 
 Time to modify jekyll itself.
 

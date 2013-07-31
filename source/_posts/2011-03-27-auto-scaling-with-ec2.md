@@ -12,7 +12,7 @@ Set up a scalable server farm in less than 10 minutes with Amazon Elastic Comput
 
 <!--more-->
 
-<blockquote><img class="alignright size-full wp-image-93" title="Amazon Web Services" src="/uploads/2011/03/aws_logo.png" alt="" width="164" height="67" />Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale computing easier for developers.</blockquote>
+> <img class="pull-right" src="/uploads/2011/03/aws_logo.png">Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale computing easier for developers.</blockquote>
 If you have used EC2 at all you must have wondered how you can automate the creation of instances in your load balancer. So did we. After much searching and various testing back and forth we came up with the following solution.
 
 <strong>Dependencies</strong>

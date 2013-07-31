@@ -13,7 +13,7 @@ We discovered [Solarized](http://xorcode.net/ejFgVg) by Ethan Schoonover and ins
 
 <!--more-->
 
-> ![Solarized -- Precision colors for machines and people](/uploads/2011/04/solarized-yinyang-150x150.png) Solarized is a sixteen color palette (eight monotones, eight accent colors) designed for use with terminal and gui applications. It has several [unique properties](http://xorcode.net/fK0voM). I [Ethan Schoonover] designed this colorscheme with both precise [CIELAB](http://xorcode.net/ezzkDl) lightness relationships and a refined set of hues based on fixed color wheel relationships.
+> <img src="/uploads/2011/04/solarized-yinyang-150x150.png" class="pull-right"> Solarized is a sixteen color palette (eight monotones, eight accent colors) designed for use with terminal and gui applications. It has several [unique properties](http://xorcode.net/fK0voM). Ethan Schoonover designed this colorscheme with both precise [CIELAB](http://xorcode.net/ezzkDl) lightness relationships and a refined set of hues based on fixed color wheel relationships.
 
 [Solarized](http://xorcode.net/ejFgVg) comes with color profiles for Mac OS X, Vim, Mutt, as well as with color palettes for Adobe Photoshop, Apple Color Picker, and GIMP.
 

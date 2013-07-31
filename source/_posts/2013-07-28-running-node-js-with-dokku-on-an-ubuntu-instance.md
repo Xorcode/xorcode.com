@@ -10,9 +10,7 @@ After having tried several fully featured <abbr title="Platform As A Service">Pa
 
 <!--more-->
 
-<blockquote class="colored">
-  <p>Docker powered mini-Heroku. The smallest PaaS implementation you've ever seen.</p>
-</blockquote>
+> Docker powered mini-Heroku. The smallest PaaS implementation you've ever seen.
 
 During our initial testing we started out with a *t1.micro* instance, which seemed sufficient for development needs. The instance consumes a constant 100% CPU during operation, yet the different services respond in a timely fashion with a few megabytes of RAM to spare with two to three applications running. Definitely not the configuration we would use for a production environment.
 
