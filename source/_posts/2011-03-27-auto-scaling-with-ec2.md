@@ -6,6 +6,7 @@ title: Auto-Scaling with EC2
 date: 2011-03-27 13:45:04.000000000 -04:00
 categories: [Cloud]
 tags: [ec2,amazon]
+alias: [/guides/auto-scaling-with-ec2]
 ---
 
 Set up a scalable server farm in less than 10 minutes with Amazon Elastic Compute Cloud utilizing Elastic Load Balancing and Auto Scaling.
