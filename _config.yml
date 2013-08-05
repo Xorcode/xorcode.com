@@ -62,7 +62,7 @@ less:
 
 asset_bundler:
   compress:
-    js: false
+    js: closure
     css: false
   base_path: /bundles/
   server_url:

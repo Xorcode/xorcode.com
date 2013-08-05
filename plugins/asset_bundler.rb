@@ -3,7 +3,7 @@
 #
 # Author : Colin Kennedy
 # Repo   : http://github.com/moshen/jekyll-asset_bundler
-# Version: 0.11
+# Version: 0.10
 # License: MIT, see LICENSE file
 #
 
@@ -11,6 +11,7 @@ require 'yaml'
 require 'digest/md5'
 require 'net/http'
 require 'uri'
+require 'less'
 
 module Jekyll
 
@@ -27,8 +28,7 @@ module Jekyll
       begin
         # Some ugliness to work around the Block returning an array
         #   in liquid <2.4.0
-        # Note: Jekyll 1.0.x only require liquid 2.3
-        @assets = YAML::load(raw_markup.kind_of?(Array) ? raw_markup.first : raw_markup)
+        @assets = YAML::load(raw_markup.class == Array ? raw_markup[0] : raw_markup)
       rescue
         puts <<-END
 Asset Bundler - Error: Problem parsing a YAML bundle
@@ -38,7 +38,7 @@ Asset Bundler - Error: Problem parsing a YAML bundle
 END
       end
 
-      if !@assets.kind_of?(Array)
+      if @assets.class != Array
         puts "Asset Bundler - Error: YAML bundle is not an Array\n#{raw_markup}"
         @assets = []
       end
@@ -129,7 +129,7 @@ END
       }
     }
     @@current_config = nil
-    @@supported_types = ['js', 'css']
+    @@supported_types = ['js', 'css', 'less']
     attr_reader :content, :hash, :filename, :base
 
     def initialize(files, type, context)
@@ -159,8 +159,8 @@ END
           ret_config = @@default_config.deep_merge(context.registers[:site].config["asset_bundler"])
 
           ret_config['markup_templates'].keys.each {|k|
-            if !ret_config['markup_templates'][k].instance_of?(Liquid::Template)
-              if ret_config['markup_templates'][k].instance_of?(String)
+            if ret_config['markup_templates'][k].class != Liquid::Template
+              if ret_config['markup_templates'][k].class == String
                 ret_config['markup_templates'][k] =
                   Liquid::Template.parse(ret_config['markup_templates'][k]);
               else
@@ -195,8 +195,9 @@ END
           ret_config['dev'] = context.registers[:site].config["dev"] ? true : false
         end
 
-        # Let's assume that when flag 'watch' or 'serving' is enabled, we want dev mode
-        if context.registers[:site].config['serving'] || context.registers[:site].config['watch']
+        # Jekyll version 1.0 will change server to serving
+        # TODO: Simplify this when Jekyll v1 is released
+        if context.registers[:site].config['server'] || context.registers[:site].config['serving']
           ret_config['dev'] = true
         end
 
@@ -224,6 +225,13 @@ END
           f = "http:#{f}" if !$1
           f.sub!( /^https/i, "http" ) if $1 =~ /^https/i
           @content.concat(remote_asset_cache(URI(f)))
+        elsif f =~ /\.less$/
+          less_file_path = File.join(src, f)
+          less_parser = Less::Parser.new :paths => [File.dirname(less_file_path)]
+          tree = less_parser.parse(File.read(less_file_path))
+          @content.concat(tree.to_css)
+          f = f.sub(/\.less$/, ".css")
+          @type = "css"
         else
           @content.concat(File.read(File.join(src, f)))
         end
@@ -250,8 +258,14 @@ END
     end
 
     def cache_dir()
-      cache_dir = File.expand_path( "../_asset_bundler_cache",
-                                    @context.registers[:site].plugins.first )
+      plugin_conf = @context.registers[:site].plugins
+      # Hack for jekyll versions before 0.12.0
+      if plugin_conf.kind_of?(Array)
+        plugin_dir = plugin_conf.first
+      else
+        plugin_dir = plugin_conf
+      end
+      cache_dir = File.expand_path( "../_asset_bundler_cache", plugin_dir)
       if( !File.directory?(cache_dir) )
         FileUtils.mkdir_p(cache_dir)
       end
@@ -288,7 +302,7 @@ END
       src = @context.registers[:site].source
       @files.each {|f|
         @context.registers[:site].static_files.select! {|s|
-          if s.instance_of?(StaticFile)
+          if s.class == StaticFile
             s.path != File.join(src, f)
           else
             true

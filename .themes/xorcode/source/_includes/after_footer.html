@@ -1,9 +1,11 @@
-<script type="text/javascript" src="/js/jquery.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/prettify.min.js"></script>
-<script type="text/javascript" src="/js/lightbox.min.js"></script>
-<script type="text/javascript" src="/js/github.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+{% bundle %}
+- /js/jquery.js
+- /js/bootstrap.js
+- /js/prettify.js
+- /js/lightbox.js
+- /js/github.js
+- /js/main.js
+{% endbundle %}
 
 {% include disqus.html %}
 {% include google_analytics.html %}
