@@ -32,6 +32,10 @@ We discovered [Solarized](http://xorcode.net/ejFgVg) by Ethan Schoonover and ins
 
 {% gist 1397104/solarize.sh %}
 
+<span class="label label-info">Fork</span> MontagueRanjel left a comment with an updated version of Jeff's script that allows you to unset the changes made to your terminal configuration:
+
+{% gist 2660659/mate-term-solarize.sh %}
+
 Before running this script please make a new copy of your current terminal profile in the "Edit" > "Profiles" menu in case you want to switch back later. To use this script, paste this file into your home folder as `solarize.sh` and then run `chmod +x solarize.sh`.
 
 ## Vim
