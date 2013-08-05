@@ -15,7 +15,7 @@ module Jekyll
       #
       # Returns destination file path.
       def destination(dest)
-        File.join(dest, @dir, @name.sub(/less$/, 'css'))
+        File.join("#{dest}", @dir, @name.sub(/less$/, 'css'))
       end
 
       # Convert the less file into a css file.
@@ -57,6 +57,7 @@ module Jekyll
       # LessCssFile object.
       def generate(site)
         site.static_files.clone.each do |sf|
+          sf = "#{sf}"
           if sf.kind_of?(Jekyll::StaticFile) && sf.path =~ /\.less$/
             @options["theme_files"].each do |tf|
               if sf.path.include? tf
@@ -70,6 +71,7 @@ module Jekyll
           end
         end
         site.static_files.clone.each do |sf|
+          sf = "#{sf}"
           if sf.kind_of?(Jekyll::StaticFile) && !sf.kind_of?(LessCssFile) && sf.path =~ /\.less$/
             site.static_files.delete(sf)
           end
