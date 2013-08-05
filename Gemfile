@@ -17,5 +17,5 @@ group :development do
 end
 
 gem 'therubyracer'
-gem 'jekyll-less', '0.0.4'
+gem 'jekyll-less', '~> 0.0.4'
 gem 'sinatra', '~> 1.3.3'
