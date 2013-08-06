@@ -14,8 +14,9 @@ group :development do
   gem 'liquid', '~> 2.3.0'
   gem 'bitly', '~> 0.9.0'
   gem 'closure-compiler', '~> 1.1.10'
+  gem 'jekyll-asset-pipeline'
+  gem 'therubyracer'
+  gem 'jekyll-less', '~> 0.0.4'
 end
 
-gem 'therubyracer'
-gem 'jekyll-less', '~> 0.0.4'
 gem 'sinatra', '~> 1.3.3'

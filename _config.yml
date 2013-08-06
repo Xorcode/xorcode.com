@@ -56,18 +56,12 @@ default_asides: [asides/search.html,asides/post_categories.html,asides/post_tags
 # post_asides:
 # page_asides:
 
-# Asset Bundler configuration
-asset_bundler:
-  compress:
-    js: closure
-    css: false
-  base_path: /bundles/
-  server_url:
-  remove_bundled: true
-  dev: false
-  markup_templates:
-    js: "<script type='text/javascript' src='{{url}}'></script>\n"
-    css: "<link media='all' rel='stylesheet' type='text/css' href='{{url}}' />\n"
+asset_pipeline:
+  bundle: true            # Default = true
+  compress: true          # Default = true
+  output_path: assets     # Default = assets
+  display_path: nil       # Default = nil
+  gzip: false             # Default = false
 
 # ----------------------- #
 #   3rd Party Settings    #

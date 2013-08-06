@@ -25,9 +25,9 @@
   <link rel="canonical" href="{{ canonical }}">
 
   <link href="{{ root_url }}/favicon.png" rel="icon">
-  {% bundle %}
-  - /css/theme_venera.less
-  {% endbundle %}
+{% css_asset_tag global %}
+- /_assets/less/theme_venera.less
+{% endcss_asset_tag %}
   <link href="http://fonts.googleapis.com/css?family=Abel:400|Oswald:300,400,700" media="all" rel="stylesheet" type="text/css" />
   <link href="{{ site.subscribe_rss }}" rel="alternate" title="{{site.title}}" type="application/atom+xml">
 </head>
