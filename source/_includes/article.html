@@ -8,7 +8,7 @@
         <div class="pull-left">
           <span class="post-date">{% include post/date.html %}{{ date_formatted }}</span>
           {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
-            <a href="{{ root_url }}{{ post.url }}#disqus_thread" class="post-comments">0 Comments</a>
+            <a href="{{ root_url }}{{ post.url }}/#disqus_thread" class="post-comments">0 Comments</a>
           {% endif %}
         </div>
         <div class="pull-right">
@@ -23,7 +23,7 @@
     {% endif %}
     <p class="post-content{% if post.index_image %} separated{% endif %}">{{ content | excerpt }}{% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}</p>
     {% if excerpted == 'true' %}
-      <a href="{{ root_url }}{{ post.url }}" class="btn btn-primary btn-extra pull-right">{{ site.excerpt_link }}</a>
+      <a href="{{ root_url }}{{ post.url }}/" class="btn btn-primary btn-extra pull-right">{{ site.excerpt_link }}</a>
     {% endif %}
   </div>
 {% else %}
@@ -39,7 +39,7 @@
           {% endunless %}
           {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
             <span class="info-item">
-              <a href="{{ root_url }}{{ post.url }}#disqus_thread" class="post-comments">0 Comments</a>
+              <a href="{{ root_url }}{{ post.url }}/#disqus_thread" class="post-comments">0 Comments</a>
             </span>
           {% endif %}
           <span class="info-item last">{% include post/date.html %}{{ date_formatted }}</span>
