@@ -2,7 +2,7 @@
   <div class="white-card recent-post clearfix">
     {% unless page.no_header %}
       <h5 class="recent-post-header">
-        <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
+        <a href="{{ root_url }}{{ post.url }}/">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
       </h5>
       <div class="post-info clearfix">
         <div class="pull-left">
@@ -39,7 +39,7 @@
           {% endunless %}
           {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
             <span class="info-item">
-              <a href="{{ root_url }}{{ post.url }}/#disqus_thread" class="post-comments">0 Comments</a>
+              <a href="{{ root_url }}{{ page.url }}/#disqus_thread" class="post-comments">0 Comments</a>
             </span>
           {% endif %}
           <span class="info-item last">{% include post/date.html %}{{ date_formatted }}</span>
