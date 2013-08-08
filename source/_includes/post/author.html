@@ -2,39 +2,59 @@
   {% assign author = post.author %}
   {% assign author_bio = post.author_bio %}
   {% assign author_email = post.author_email %}
+  {% assign author_twitter = post.author_twitter %}
+  {% assign author_github = post.author_github %}
 {% elsif page.author %}
   {% assign author = page.author %}
   {% assign author_bio = page.author_bio %}
   {% assign author_email = page.author_email %}
+  {% assign author_twitter = page.author_twitter %}
+  {% assign author_github = page.author_github %}
 {% else %}
   {% assign author = site.author %}
   {% assign author_bio = site.author_bio %}
   {% assign author_email = site.author_email %}
+  {% assign author_twitter = site.author_twitter %}
+  {% assign author_github = site.author_github %}
 {% endif %}
 {% if author %}
-<div class="post-author-w">
-  <h3 class="section-header">About the Author</h3>
-  <div class="row">
-    {% if author_email %}
-      <div class="span1">
-        <div class="post-author-photo hidden-phone">
-          <img src="{{ author_email | gravatar }}" />
-        </div>
-      </div>
-      <div class="span7">
-        <div class="post-author-bio-w">
-          <div class="post-author-name">{{ author }}</div>
-          {% if author_bio %}<div class="post-author-bio">{{ author_bio }}</div>{% endif %}
-        </div>
-      </div>
-    {% else %}
-      <div class="span8">
-        <div class="post-author-bio-w">
-          <div class="post-author-name">{{ author }}</div>
-          {% if author_bio %}<div class="post-author-bio">{{ author_bio }}</div>{% endif %}
-        </div>
-      </div>
+  {% capture meta %}
+    {% if author_twitter %}
+      <a href="https://twitter.com/{{ author_twitter }}" class="btn btn-mini"><i class="icon-twitter"></i> twitter</a>
     {% endif %}
+    {% if author_github %}
+      <a href="https://github.com/{{ author_github }}" class="btn btn-mini"><i class="icon-github"></i> github</a>
+    {% endif %}
+  {% endcapture %}
+  <div class="post-author-w">
+    <h3 class="section-header">About the Author</h3>
+    <div class="row">
+      {% if author_email %}
+        <div class="span1">
+          <div class="post-author-photo hidden-phone">
+            <img src="{{ author_email | gravatar }}" />
+          </div>
+        </div>
+        <div class="span7">
+          <div class="post-author-bio-w">
+            <div class="post-author-name">
+              {{ author }}
+            </div>
+            {% if author_bio %}<div class="post-author-bio">{{ author_bio }}</div>{% endif %}
+            {% if meta %}<div class="post-author-meta">{{ meta }}</div>{% endif %}
+          </div>
+        </div>
+      {% else %}
+        <div class="span8">
+          <div class="post-author-bio-w">
+            <div class="post-author-name">
+              {{ author }}
+            </div>
+            {% if author_bio %}<div class="post-author-bio">{{ author_bio }}</div>{% endif %}
+            {% if meta %}<div class="post-author-meta">{{ meta }}</div>{% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
   </div>
-</div>
 {% endif %}
