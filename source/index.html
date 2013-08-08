@@ -71,7 +71,7 @@ description: Custom Node.js, Python, Ruby, PHP, Perl and Android development. Ar
       {% assign index = true %}
       {% for post in paginator.posts limit:3 %}
         {% assign content = post.content %}
-        <div class="span4">
+        <div class="span4 equal">
           {% include article.html %}
         </div>
       {% endfor %}
@@ -79,7 +79,7 @@ description: Custom Node.js, Python, Ruby, PHP, Perl and Android development. Ar
     <div class="row">
       {% for post in paginator.posts offset:3 limit:3 %}
         {% assign content = post.content %}
-        <div class="span4">
+        <div class="span4 equal">
           {% include article.html %}
         </div>
       {% endfor %}
