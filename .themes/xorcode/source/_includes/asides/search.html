@@ -1,13 +1,16 @@
-<div class="blog-side-search widget-tp">
-  <h3>
-    <i class="icon-search"></i>
-    Search Xorcode
-  </h3>
-  <form class="no-margin-bottom form-search">
-    <fieldset>
-      <div class="controls controls-row">
-        <input class="search-input span4" placeholder="What are you searching for?" type="text">
-      </div>
-    </fieldset>
-  </form>
-</div>
+{% if site.simple_search %}
+  <div class="blog-side-search widget-tp">
+    <h3>
+      <i class="icon-search"></i>
+      Search Xorcode
+    </h3>
+    <form action="{{ site.simple_search }}" method="get" class="no-margin-bottom form-search">
+      <fieldset role="search">
+        <div class="controls controls-row">
+          <input type="hidden" name="q" value="site:{{ site.url | shorthand_url }}">
+          <input class="search-input span4" type="text" name="q" results="0" placeholder="What are you searching for?">
+        </div>
+      </fieldset>
+    </form>
+  </div>
+{% endif %}

@@ -46,6 +46,9 @@
         </p>
         {% endunless %}
     {% endunless %}
+    {% unless page.sharing == false %}
+      {% include post/sharing.html %}
+    {% endunless %}
     {% if post.decor_image %}
       <div class="single-post-image bottom decor-image">
         <img src="{{ root_url }}{{ post.decor_image }}" />
