@@ -4,12 +4,12 @@
 
 url: http://www.xorcode.com
 title: Xorcode
-subtitle: Brilliance built in.
+subtitle: Brilliance, built in.
 author: Torgny Bjers
 author_email: torgny@xorcode.com
-author_bio: Accomplished Senior PHP, Perl, Android, Node.js, and Python Developer. Torgny writes articles about things that he's passionate about such as cloud platforms, server optimization, and open source projects such as Jekyll, jQuery, and others.
+author_bio: Accomplished Senior PHP, Perl, Android, Node.js, and Python Developer. Torgny writes articles about Node.js, PHP, Ruby, cloud platforms, server optimization, and open source projects such as Flatiron, Jekyll, jQuery, and others.
 simple_search: http://google.com/search
-description:
+description: Custom Node.js, Python, Ruby, PHP, Perl and Android development. Articles about programming and cloud platforms.
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
