@@ -16,9 +16,11 @@ During our initial testing we started out with a *t1.micro* instance, which seem
 
 ### Prerequisites
 
-Dokku requires the host name of the server to properly resolve or it will not install the necessary `VHOST` records. You can use any <abbr title="Fully Qualified Domain Name">FQDN</abbr> that will resolve using `dig +short $HOSTNAME` on your instance.
+<div class="alert alert-error"><i class="icon-warning-sign"></i> Dokku requires the host name of the server to properly resolve or it will not install the necessary <code>VHOST</code> records. You can use any <abbr title="Fully Qualified Domain Name">FQDN</abbr> that will resolve using <code>dig +short $HOSTNAME</code> on your instance.</div>
 
-The domain you use for your Dokku server needs to support wildcard sub domains. An example has been provided below:
+The domain you use for your Dokku server needs to support wildcard sub-domains.
+
+An example has been provided below:
 
     example.org    A     <Elastic IP>
     *              A     <Elastic IP>
