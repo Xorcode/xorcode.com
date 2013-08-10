@@ -5,6 +5,7 @@ description: ""
 comments: true
 categories: [Cloud,Server]
 tags: [tar,mongodb,amazon,s3]
+description: Have you been looking for an easy way to back something up to the cloud with minimum effort? Having explored several options we settled on the most simple solution available. Tar and Amazon S3.
 ---
 
 Have you been looking for an easy way to back something up to the cloud with minimum effort? Having explored several options we settled on the most simple solution available. [Tar]({{ 'http://www.gnu.org/software/tar/' | bitly }}) and [Amazon S3]({{ 'http://aws.amazon.com/s3/' | bitly }}).

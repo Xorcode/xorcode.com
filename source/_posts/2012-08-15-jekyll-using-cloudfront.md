@@ -5,6 +5,7 @@ description: "Using CloudFront in Jekyll-Bootstrap"
 comments: true
 categories: [Code,Cloud]
 tags: [jekyll,amazon,cloudfront,ruby,jekyll-bootstrap]
+description: Deploying style, script, and media assets to a CDN with Jekyll.
 ---
 
 We decided to use [Amazon CloudFront](http://xorcode.net/R2fO1q) as a <abbr title="Content Delivery Network">CDN</abbr> to deliver media assets of our site. This seemed easy enough until we looked into how Jekyll-Bootstrap is written. For all intents and purposes, Jekyll-Bootstrap uses safe mode to indicate production. Though that would mean that none of our plugins would be used when deploying.

@@ -5,6 +5,7 @@ description: "Generate Bit.ly Links on The Fly with Liquid in Jekyll"
 comments: true
 categories: Code
 tags: [jekyll,liquid,bitly]
+description: Filter links with Liquid to effortlessly turn them into bit.ly links on the fly with this plugin.
 ---
 
 We needed a quick way of generating shortened links in our articles. Since we already use [bit.ly](http://bit.ly/) we figured that would be the best choice and there are several Ruby scripts and gems available. We picked one that is actively developed, appears stable, as well as has support for [bit.ly API V3](http://dev.bitly.com/data_apis.html).
