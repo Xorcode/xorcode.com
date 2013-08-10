@@ -5,7 +5,7 @@ description: "Performance Tune Apache 2.x"
 comments: true
 categories: [Cloud,Server]
 tags: [aws,amazon,apache,performance]
-description: AWS: Help determine your Apache ServerLimit and MaxClients for your specific server configuration to ensure that your instance runs smoothly.
+description: Help determine your Apache ServerLimit and MaxClients for your specific AWS EC2 server configuration to ensure that your instance runs smoothly.
 ---
 
 Help determine your Apache `ServerLimit` and `MaxClients` for your specific server configuration to ensure that your instance runs smoothly.
