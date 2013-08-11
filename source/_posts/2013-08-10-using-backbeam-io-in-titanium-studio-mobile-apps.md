@@ -12,8 +12,6 @@ decor_image: /uploads/2013/08/titanium-backbeam-feature.png
 
 <!--more-->
 
-<span class="label label-warning">Heads Up!</span> The following example awaits a pull request as of Aug 10, 2013 into the Backbeam JavaScript SDK. If you are eager to try this out, pull the code directly from the [Xorcode/backbeamjs]({{ 'https://github.com/Xorcode/backbeamjs' | bitly }}) repository.
-
 In order to get started with Backbeam in Titanium™ you need only include the [Backbeam JavaScript SDK]({{ 'http://backbeam.io/documentation-javascript' | bitly }}) in your project and you are off to the races.
 
 {% highlight javascript %}
