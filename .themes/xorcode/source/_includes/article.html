@@ -49,9 +49,9 @@
     {% unless page.sharing == false %}
       {% include post/sharing.html %}
     {% endunless %}
-    {% if post.decor_image %}
+    {% if page.decor_image %}
       <div class="single-post-image bottom decor-image">
-        <img src="{{ root_url }}{{ post.decor_image }}" />
+        <img src="{{ root_url }}{{ page.decor_image }}" />
       </div>
     {% endif %}
     <div class="post-content">
