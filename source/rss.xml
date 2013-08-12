@@ -6,7 +6,7 @@ layout: nil
   <channel>
     <title><![CDATA[{{ site.title }}]]></title>
     <description><![CDATA[{{ site.description }}]]></description>
-    <copyright>Copyright &copy; 2003-{{ site.time | date: "%Y" }} Xorcode, LLC. All rights reserved.</copyright>
+    <copyright>Copyright 2003-{{ site.time | date: "%Y" }} Xorcode, LLC. All rights reserved.</copyright>
     <link>{{ site.url }}/</link>
     <atom:link href="{{ site.url }}/rss.xml" rel="self" type="application/rss+xml" />
     {% for post in site.posts limit: 20 %}
