@@ -19,6 +19,34 @@ module JekyllAssetPipeline
       return parser.parse(@content).to_css
     end
   end
+
+  class CssTagTemplate < JekyllAssetPipeline::Template
+    def self.filetype
+      '.css'
+    end
+
+    def self.priority
+      -1
+    end
+
+    def html
+      "<link href='/#{@path}/#{@filename}' rel='stylesheet' type='text/css' />"
+    end
+  end
+
+  class JavaScriptTagTemplate < JekyllAssetPipeline::Template
+    def self.filetype
+      '.js'
+    end
+
+    def self.priority
+      -1
+    end
+
+    def html
+      "<script src='/#{@path}/#{@filename}' type='text/javascript'></script>"
+    end
+  end
 end
 
 class JavaScriptCompressor < JekyllAssetPipeline::Compressor
