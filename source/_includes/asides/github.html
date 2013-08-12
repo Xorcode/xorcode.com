@@ -12,11 +12,6 @@
   {% endif %}
   <script type="text/javascript">
     window.onload = function (e) {
-      if (!window.jXHR){
-        var jxhr = "{% javascript_asset_tag github %}- /_assets/js/libs/jXHR.js{% endjavascript_asset_tag %}";
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(jxhr, s);
-      }
       github.showRepos({
           user: '{{site.github_user}}'
         , count: {{site.github_repo_count}}
