@@ -40,6 +40,7 @@ category_dir: blog/categories
 tag_dir: blog/tags
 markdown: rdiscount
 pygments: false # default python pygments have been replaced by pygments.rb
+future: false
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
@@ -113,3 +114,7 @@ google_analytics_tracking_id: UA-16963170-1
 
 # Facebook Like
 facebook_like: true
+
+# Flattr Button
+flattr_user: xorcode
+flattr_button: true
