@@ -9,8 +9,13 @@ module Jekyll
       site = context.registers[:site]
       page_data = context.environments.first["page"]
       series_name = page_data['series']
+      series_description = page_data['series_description']
       if !series_name
-        puts "Unable to find series name for page: #{page.title}"
+        puts "Unable to find series name for page: #{page_data['title']}"
+        return "<!-- Error with series tag -->"
+      end
+      if !series_description
+        puts "Unable to find series series_description for page: #{page_data['title']}"
         return "<!-- Error with series tag -->"
       end
 
@@ -23,17 +28,17 @@ module Jekyll
 
       all_entries.sort_by { |p| p.date.to_f }
 
-      text = "<div class='seriesNote'>"
-      list = "<ul>"
+      text = "<div class='well well-large'>"
+      text += "<h3>Series: #{series_name}</h3>"
+      text += "<p>#{series_description}</p>"
+      list = "<ul class='nav nav-tabs nav-stacked'>"
       all_entries.each_with_index do |post, idx|
-        list += "<li><strong>Part #{idx+1}</strong> - "
+        list += "<li>"
         if post.data['title'] == page_data['title']
-          list += "This Article"
-          text += "<p>This article is <strong>Part #{idx+1}</strong> in a <strong>#{all_entries.size}-Part</strong> Series.</p>"
+          list += "<li class='active'><a href='javascript:;'>#{post.data['title']}</a></li>"
         else
-          list += "<a href='#{post.url}'>#{post.data['title']}</a>"
+          list += "<li><a href='#{post.url}/'>#{post.data['title']}</a></li>"
         end
-        list += "</li>"
       end
       text += list += "</ul></div>"
       
