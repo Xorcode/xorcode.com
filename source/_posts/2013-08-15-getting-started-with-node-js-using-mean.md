@@ -57,12 +57,16 @@ You can either use your package manager to install Node.js on your system, or fo
 
 - Go to [nodejs.org]({{ 'http://nodejs.org/download/' | bitly }}) and select your desired binaries or source code.
 
-### Getting started with MEAN
+## Getting started with MEAN
 
 Once you have installed Node.js in your development environment, it's time to get MEAN.
 
     $ git clone https://github.com/linnovate/mean
     $ cd ./mean
+
+<a href="https://github.com/linnovate/mean" class="btn btn-info">Clone MEAN on Github</a>
+
+### Starting the application
 
 Linnovate recommends using Grunt to start the server:
 
@@ -93,9 +97,9 @@ To run with a different environment when you start MEAN, just specify `NODE_ENV`
     $ NODE_ENV=test grunt
     $ NODE_ENV=test node server
 
-<div class="alert alert-info"><span class="label label-info">Heads Up!</span> Running MEAN in production enables caching.</div>
+<div class="alert alert-info"><span class="label label-info">Heads Up!</span> Running MEAN in production enables caching, which will prevent certain parts of your application from being updated when you re-save them.</div>
 
-### Example
+### Examining the Example
 
 MEAN includes an example that defines model object schemas, a back-end controller, routes, AngularJS <abbr title="Create, Update, Delete">CRUD</abbr> routes, an AngularJS <abbr title="Representational State Transfer">REST</abbr> service, an AngularJS front-end controller, and AngularJS views for CRUD.
 
@@ -126,6 +130,10 @@ Front-end controller that handles listing articles, creating, updating, and dele
 #### AngularJS Views
 
 These views are used by AngularJS to render content in the browser for the various routes available for the Articles controller.
+
+## Conclusion
+
+MEAN allows you to quickly bootstrap an application with its ready-to-rock application boilerplate. In a few minutes you have an application ready for use on the web, in mobile browsers, as well as by native desktop and mobile applications.
 
 {% series_list %}
 
