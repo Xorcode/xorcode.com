@@ -4,18 +4,21 @@
   {% assign author_email = post.author_email %}
   {% assign author_twitter = post.author_twitter %}
   {% assign author_github = post.author_github %}
+  {% assign author_bitbucket = post.author_bitbucket %}
 {% elsif page.author %}
   {% assign author = page.author %}
   {% assign author_bio = page.author_bio %}
   {% assign author_email = page.author_email %}
   {% assign author_twitter = page.author_twitter %}
   {% assign author_github = page.author_github %}
+  {% assign author_bitbucket = page.author_bitbucket %}
 {% else %}
   {% assign author = site.author %}
   {% assign author_bio = site.author_bio %}
   {% assign author_email = site.author_email %}
   {% assign author_twitter = site.author_twitter %}
   {% assign author_github = site.author_github %}
+  {% assign author_bitbucket = site.author_bitbucket %}
 {% endif %}
 {% if author %}
   {% capture meta %}
@@ -24,6 +27,9 @@
     {% endif %}
     {% if author_github %}
       <a href="https://github.com/{{ author_github }}" class="btn btn-mini"><i class="icon-github"></i> github</a>
+    {% endif %}
+    {% if author_bitbucket %}
+      <a href="https://bitbucket.com/{{ author_bitbucket }}" class="btn btn-mini"><i class="icon-bitbucket"></i> bitbucket</a>
     {% endif %}
   {% endcapture %}
   <div class="post-author-w">
