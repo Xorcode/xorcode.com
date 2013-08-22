@@ -50,7 +50,6 @@ module Jekyll
 
     def shorten(input)
       input.strip!
-      return input
       return @result_cache[input] if @result_cache.has_key?(input)
       bitly = Bitly.new(@username, @key)
       u = bitly.shorten(input, :history => 1)
