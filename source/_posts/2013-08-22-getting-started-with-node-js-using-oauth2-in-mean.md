@@ -131,12 +131,56 @@ Create a new client and modify the OAuth2 configuration in `server.js` with the 
 
 This example assumes that your main mean server runs on port 3000 and that your testing server runs on port 4000.
 
+Start your main server:
+
+    $ DEBUG=oauth2orize,oauth2 node server.js
+      oauth2orize register parser code request +0ms
+      oauth2orize register responder code response +2ms
+      oauth2orize register parser token request +1ms
+      oauth2orize register responder token response +0ms
+      oauth2orize register exchanger authorization_code authorization_code +0ms
+      oauth2orize register exchanger password password +1ms
+    Express app started on port 3000
+
+Then start the testing server:
+
     $ cd scripts
     $ npm install
-    $ node server.js
+    $ NODE_DEBUG=true node server.js
     listening on port 4000
 
-Once the server's up and running you can navigate to http://localhost:4000/ to test your implementation by clicking on the "Authenticate with Service" link. Clicking the link will take you to the OAuth dialog of your main mean application. Once you click "Allow" you should be taken back to the testing server where your access token should be printed. You are now ready to use the access token through the Bearer strategy.
+Once the server's up and running you can navigate to http://localhost:4000/ to test your implementation by clicking on the "Authenticate with Service" link. Clicking the link will take you to the OAuth dialog of your main mean application.
+
+You should see something like this in your console log:
+
+      oauth2orize parse:request +42s
+      oauth2orize parse:request +0ms
+      oauth2 authorization:  +0ms pEdDoXEgEpSbkAzN http://localhost:4000/callback
+      oauth2 authorization:  +3ms null { clientSecret: 'unpYdLS16rlS7ITa1vVOD7hwJ8ZRzTkV',
+      clientKey: 'pEdDoXEgEpSbkAzN',
+      name: 'Web',
+      _id: 52115d123265413b29000001,
+      __v: 0,
+      created: Sun Aug 18 2013 19:47:30 GMT-0400 (EDT) }
+
+
+Once you click "Allow" you should be taken back to the testing server where your access token should be printed.
+
+The console output on your testing server should look like this:
+
+    OAuth2 Node Request
+    Simple OAuth2: Making the HTTP request { uri: 'http://localhost:3000/oauth/token',
+      method: 'POST',
+      headers: { Authorization: 'Basic cEVkRG9YRWdFcFNia0F6Tjp1bnBZZExTMTZybFM3SVRhMXZWT0Q3aHdKOFpSelRrVg==' },
+      form: 
+       { code: 'dEErLArE919sZ38E',
+         redirect_uri: 'http://localhost:4000/callback',
+         grant_type: 'authorization_code',
+         client_id: 'pEdDoXEgEpSbkAzN',
+         secret: 'unpYdLS16rlS7ITa1vVOD7hwJ8ZRzTkV' } }
+    Simple OAuth2: checking response body {"access_token":"PE6XthpfpWcc8Veu6DC6ZLJ9lwLoqljmZ10nDMvtdFHkEKbCxyvlUBLNpTKC4Vb2cNUM2kUJqJJj9djaYbrpEWAdMBJnxWzJTUiayA9I45FBwEOxGifG9R2E9x3xiXHf52F5rAYRMQdKne1qfPe8uloxNIJ23u14bupRA3W5d3JXt8zQEcXV1Rc3C8rIbIGwMPUO8MKdW2CRwk6jDp4ksMGThpK7MpYVITxrDdvpAI11CRtiyX320AZ6I5lnwv3f","token_type":"bearer"}
+
+You are now ready to use the access token through the Bearer strategy.
 
 Our next article will explain how to secure particular parts of your application with the methods you have learned in this lesson.
 
