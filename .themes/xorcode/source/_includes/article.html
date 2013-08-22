@@ -58,13 +58,10 @@
       {{ content }}
     </div>
   </div>
-  <div class="clearfix" style="padding-bottom:20px;">
-    {% if page.previous.url %}
-      <a class="btn pull-left" href="{{page.previous.url}}/" title="Previous Post: {{page.previous.title}}"><i class="icon-arrow-left"></i> Previous</a>
-    {% endif %}
-    {% if page.next.url %}
-      <a class="btn pull-right" href="{{page.next.url}}/" title="Next Post: {{page.next.title}}">Next <i class="icon-arrow-right"></i></a>
-    {% endif %}
-  </div>
+
+  <ul class="pager clearfix" style="padding-bottom:20px;">
+    {% if page.previous.url %}<li class="previous"><a href="{{page.previous.url}}/" title="Previous Post: {{page.previous.title}}"><i class="icon-arrow-left"></i> Previous</a></li>{% endif %}
+    {% if page.next.url %}<li class="next"><a href="{{page.next.url}}/" title="Next Post: {{page.next.title}}">Next <i class="icon-arrow-right"></i></a></li>{% endif %}
+  </ul>
   {% include post/author.html %}
 {% endif %}
