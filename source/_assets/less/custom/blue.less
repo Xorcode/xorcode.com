@@ -34,8 +34,7 @@
 
 /* Slider styles */
 .slider-w {
-  // background: #343838 url('@{imagesPath}slider-noise-black-bg.jpg') top left repeat;
-  background: #343838 url('@{imagesPath}slider-noise-black-bg.jpg') top left repeat;
+  background: #343838 url("@{sliderWImagePath}") top left repeat;
   /* Call to Action button */
   .cta {
     a {
@@ -76,13 +75,13 @@
 }
 
 .just-stripped {
-  background:transparent url('@{imagesPath}stripped-bg-blue.png') left top repeat;
+  background:transparent url("@{strippedBgBluePath}") left top repeat;
 }
 /* Can be used to separte sections of the website */
 .section-wrapper {
   /* Add a stripped background to a section */
   &.stripped {
-    background:transparent url('@{imagesPath}stripped-bg-blue.png') left top repeat;
+    background:transparent url("@{strippedBgBluePath}") left top repeat;
   }
   .section-header {
     border-bottom: 3px solid darken(@bodyBackground, 4%);
@@ -145,7 +144,7 @@
   }
   /* Text of testimonial */
   .testimonials-speech {
-    background:#FFF url('@{imagesPath}quotes.png') 15px 20px no-repeat;
+    background:#FFF url("@{quoteSpritePath}") 15px 20px no-repeat;
     .box-shadow(0px 1px 4px 1px #bbd9ee);
 
     p {
@@ -328,7 +327,7 @@
 
 /* Base class */
 .bs-docs-example {
-  background:transparent url('@{imagesPath}stripped-bg-blue.png') left top repeat;
+  background:transparent url("@{strippedBgBluePath}") left top repeat;
   .box-shadow(2px 2px 4px 0px #b5daef inset);
   border: 1px solid #98cae6;
   border-bottom: 1px solid #fff;
@@ -365,7 +364,7 @@
   border-bottom: 1px dashed #9ad1f0;
 
   .container {
-    background:transparent url('docs-help-icon.png') right top no-repeat;
+    background:transparent url("@{jumbotronContainerPath}") right top no-repeat;
   }
 }
 

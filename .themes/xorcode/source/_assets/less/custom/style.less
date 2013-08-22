@@ -634,7 +634,7 @@
 /* Slider styles */
 .slider-w {
   text-align: center;
-  background: #76A3A0 url('@{imagesPath}slider-noise-blue-bg.jpg') top left repeat;
+  background: #76A3A0 url("@{sliderNoiseBluePath}") top left repeat;
   /* Slider item */
   .item {
     height: 440px;
@@ -764,7 +764,7 @@
   }
 }
 .just-stripped {
-  background:transparent url('@{imagesPath}stripped-bg.png') left top repeat;
+  background:transparent url("@{strippedBgPath}") left top repeat;
 }
 /* Can be used to separte sections of the website */
 .section-wrapper {
@@ -772,7 +772,7 @@
   padding-bottom: 30px;
   /* Add a stripped background to a section */
   &.stripped {
-    background:transparent url('@{imagesPath}stripped-bg.png') left top repeat;
+    background:transparent url("@{strippedBgPath}") left top repeat;
   }
   /* Area under a slider - adding a border to separate visually */
   &.under-slider {
@@ -1068,7 +1068,7 @@ form.no-margin-bottom {
     display: none;
     padding:20px;
     padding-left: 70px;
-    background:#FFF url('@{imagesPath}quotes.png') 15px 20px no-repeat;
+    background:#FFF url("@{quoteSpritePath}") 15px 20px no-repeat;
     .box-shadow(0px 1px 4px 1px #b4b6a9);
     font-size:17px;
     line-height: 24px;
@@ -1104,7 +1104,7 @@ table.no-margin {
 /* Area over the footer */
 .pre-footer {
   padding: 30px 0px;
-  background:#92a298 url('@{imagesPath}slider-noise-bg.jpg') left top repeat;
+  background:#92a298 url("@{sliderNoisePath}") left top repeat;
   border-top: 10px solid #7c8f83;
 
   .thumbnail {
@@ -1230,7 +1230,7 @@ li > a > .icon-tidbits:before { content: @file-text-alt; }
 li > a > .icon-linux:before { content: @laptop; }
 
 .navbar .brand {
-  background-image: url('@{imagesPath}brand.png');
+  background-image: url("@{logoPath}");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 50% 50%;

@@ -60,12 +60,19 @@ default_asides: [asides/search.html,asides/newsletter.html,asides/post_categorie
 # post_asides:
 # page_asides:
 
-asset_pipeline:
-  bundle: true            # Default = true
-  compress: true          # Default = true
-  output_path: assets     # Default = assets
-  display_path: nil       # Default = nil
-  gzip: false             # Default = false
+assets:
+  dirname: assets
+  baseurl: /assets/
+  sources:
+    - _assets/js
+    - _assets/less
+    - _assets/img
+  js_compressor: uglifier
+  css_compressor: sass
+  cachebust: hard
+  cache: false
+  gzip: [ text/css, application/javascript ]
+  debug: false
 
 # ----------------------- #
 #   3rd Party Settings    #

@@ -1,3 +1,9 @@
+//= require jquery.js
+//= require bootstrap.js
+//= require prettify.js
+//= require lightbox.js
+//= require github.js
+
 (function() {
   $(function() {
     $('.tooltip-examples a, .tooltip-paragraph-examples a').tooltip({
