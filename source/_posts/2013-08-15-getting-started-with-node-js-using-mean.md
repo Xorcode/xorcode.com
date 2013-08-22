@@ -6,7 +6,7 @@ comments: true
 categories: [Code]
 tags: [mean,node.js,mongodb,express,angular,tutorial,series]
 series: Getting Started with Node.js
-series_description: An introduction to MongoDB, Express, Angular, and Node.js describing how to use the MEAN stack to quickly set up fully functional web applications with Node.js.
+series_description: An introduction to MongoDB, Express, Angular, and Node.js describing how to use the MEAN stack to quickly set up fully functional web applications with Node.js. The series assume you have some programming experience.
 ---
 Just like us here at Xorcode, [Linnovate]({{ 'http://www.linnovate.net/' | bitly }}) likes to contribute to the community. They have created an awesome Node.js boilerplate called [<abbr title="MongoDB, Express, Angular, Node.js">MEAN</abbr>]({{ 'http://mean.io/' | bitly }}), which we will show you how to get up and running with in a short time.
 
