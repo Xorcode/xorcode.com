@@ -31,13 +31,17 @@ Open a terminal to verify Node.js installation:
 
 #### Mac OS X
 
-    $ node --version
-    v0.11.5
+```sh
+$ node --version
+v0.11.5
+```
 
 #### Windows
 
-    C:\> node.exe --version
-    v0.11.5
+```sh
+C:\> node.exe --version
+v0.11.5
+```
 
 If you get similar output from running node in your terminal, you are ready to proceed!
 
@@ -47,11 +51,15 @@ You can either use your package manager to install Node.js on your system, or fo
 
 #### Apt-based systems (Ubuntu/Debian)
 
-    $ sudo apt-get install node
+```sh
+$ sudo apt-get install node
+```
 
 #### Yum-based systems (Redhat/Fedora)
 
-    $ sudo yum install node
+```sh
+$ sudo yum install node
+```
 
 ### Installing Node.js on other systems
 
@@ -61,8 +69,10 @@ You can either use your package manager to install Node.js on your system, or fo
 
 Once you have installed Node.js in your development environment, it's time to get MEAN.
 
-    $ git clone https://github.com/linnovate/mean
-    $ cd ./mean
+```sh
+$ git clone https://github.com/linnovate/mean
+$ cd ./mean
+```
 
 <a href="https://github.com/linnovate/mean" class="btn btn-info">Clone MEAN on Github</a>
 
@@ -70,15 +80,21 @@ Once you have installed Node.js in your development environment, it's time to ge
 
 Linnovate recommends using Grunt to start the server:
 
-    $ grunt
+```sh
+$ grunt
+```
 
 Alternatively you can start the server directly with the `node` command line inteface:
 
-    $ node server
+```sh
+$ node server
+```
 
 Then open a browser and go to:
 
-    http://localhost:3000
+```
+http://localhost:3000
+```
 
 ### Configurating MEAN
 
@@ -94,8 +110,10 @@ MEAN support three environments out of the box: **development**, **test**, and *
 
 To run with a different environment when you start MEAN, just specify `NODE_ENV` when you start your application.
 
-    $ NODE_ENV=test grunt
-    $ NODE_ENV=test node server
+```sh
+$ NODE_ENV=test grunt
+$ NODE_ENV=test node server
+```
 
 <div class="alert alert-info"><span class="label label-info">Heads Up!</span> Running MEAN in production enables caching, which will prevent certain parts of your application from being updated when you re-save them.</div>
 

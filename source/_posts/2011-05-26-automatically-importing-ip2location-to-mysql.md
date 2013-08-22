@@ -27,7 +27,7 @@ We will download the free version of the [IP database](http://xorcode.net/lAyPsB
 
 **import.php**
 
-{% highlight php %}
+```php
 <?php
 define('TEMP_DIR', sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'ipinfodb');
 define('API_KEY', 'INSERT_YOUR_API_KEY_HERE');
@@ -112,12 +112,12 @@ if (($handle = fopen(DATABASE_FILE, 'r')) !== false) {
 	die('Could not open database file: ' . DATABASE_FILE);
 }
 ?>
-{% endhighlight %}
+```
 
 The above script gives you a database table that you can query like this:
 
-{% highlight php %}
+```php
 <?php
 $sql = sprintf('SELECT * FROM ipinfodb WHERE ip_start <= %d ORDER BY ip_start DESC LIMIT 1', ip2long($_SERVER['REMOTE_ADDR']));
 ?>
-{% endhighlight %}
+```

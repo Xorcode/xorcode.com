@@ -16,20 +16,20 @@ We needed a quick way of generating shortened links in our articles. Since we al
 
 First you have to install the [Bit.ly gem]({{ 'https://github.com/philnash/bitly' | bitly }}):
 
-{% highlight bash %}
-sudo gem install bitly
-{% endhighlight %}
+```sh
+$ sudo gem install bitly
+```
 
 Once you have installed the gem simply put the below file in your `_plugins` folder.
 
 {% gist 3361948/bitly_filter.rb %}
 
 Update your configuration file with the following values:
-{% highlight yaml %}
+```yaml
 bitly:
   username: YOUR_BITLY_USERNAME
   api_key: YOUR_BITLY_KEY
-{% endhighlight %}
+```
 
 Then you can use tags like this in your content:
 

@@ -18,7 +18,9 @@ Template plugins for Wintersmith are quite easy to write. We published ours on [
 
 Navigate to the folder you created with `wintersmith new` and run
 
-    $ npm install wintersmith-liquid --save
+```sh
+$ npm install wintersmith-liquid --save
+```
 
 Once you have installed the plugin you need to modify your `config.json` and add `wintersmith-liquid` to the list of plugins for your site.
 

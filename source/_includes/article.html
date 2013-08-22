@@ -61,7 +61,7 @@
 
   <ul class="pager clearfix" style="padding-bottom:20px;">
     {% if page.previous.url %}<li class="previous"><a href="{{page.previous.url}}/" title="Previous Post: {{page.previous.title}}"><i class="icon-arrow-left"></i> Previous</a></li>{% endif %}
-    {% if page.next.url %}<li class="next"><a href="{{page.next.url}}/" title="Next Post: {{page.next.title}}">Next &rarr;</a></li>{% endif %}
+    {% if page.next.url %}<li class="next"><a href="{{page.next.url}}/" title="Next Post: {{page.next.title}}">Next <i class="icon-arrow-right"></i></a></li>{% endif %}
   </ul>
   {% include post/author.html %}
 {% endif %}

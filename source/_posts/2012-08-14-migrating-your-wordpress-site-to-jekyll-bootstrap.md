@@ -18,11 +18,11 @@ Our previous choice of CMS happened to be WordPress simply because we design and
 
 The Jekyll-Bootstrap site mentions that you can get your site up and running in three minutes. They are not exaggerating.
 
-{% highlight bash %}
+```sh
 $ git clone https://github.com/plusjade/jekyll-bootstrap.git
 $ cd jekyll-bootstrap
 $ jekyll --server
-{% endhighlight %}
+```
 
 Navigate to [http://localhost:4000/](http://localhost:4000/) and see what the fuss is about.
 
@@ -30,18 +30,18 @@ Navigate to [http://localhost:4000/](http://localhost:4000/) and see what the fu
 
 <span class="label label-warning">vanilla migration</span> Migrating from WordPress to Jekyll happens to be dead simple:
 
-{% highlight bash %}
+```sh
 $ sudo gem install sequel mysqlplus
 $ ruby -rubygems -e 'require "jekyll/migrators/wordpress"; Jekyll::WordPress.process("database", "user", "pass")'
-{% endhighlight %}
+```
 
 <span class="label label-info">custom migration</span> However, the WordPress migrator that comes packaged with Jekyll does not support importing tags and categories. The [mojombo/jekyll](http://xorcode.net/Pb1SBF) repository contains a more [up-to-date version](http://xorcode.net/Pb3FGT). Download that and put it in a `lib/` folder inside your `jekyll-bootstrap/` directory.
 
 The syntax for the newer migrator has changed slightly and also introduces a way to pass options into it:
 
-{% highlight bash %}
+```sh
 $ ruby -rubygems -r './lib/wordpress' -e 'Jekyll::WordPress.process("database", "user", "pass", "host", { :comments => false })'
-{% endhighlight %}
+```
 
 As you may have noticed, we specified a host and also turned off importing comments since we are using [Disqus](http://disqus.com/) as our comment engine.
 
@@ -65,17 +65,17 @@ From tests we determined that Rdiscount suited our content best. We have run it 
 
 We selected Rdiscount. Rdiscount does not come default with Jekyll so it needs to be installed:
 
-{% highlight bash %}
+```sh
 $ sudo gem install rdiscount
-{% endhighlight %}
+```
 
 This also means that you will have to modify your `_config.yml` file accordingly:
 
-{% highlight yaml %}
+```yaml
 markdown: rdiscount
 rdiscount:
   extensions: []
-{% endhighlight %}
+```
 
 ### Customizing Jekyll-Bootstrap
 

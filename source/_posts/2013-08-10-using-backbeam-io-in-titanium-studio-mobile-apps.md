@@ -14,22 +14,22 @@ decor_image: /uploads/2013/08/titanium-backbeam-feature.png
 
 In order to get started with Backbeam in Titanium™ you need only include the [Backbeam JavaScript SDK]({{ 'http://backbeam.io/documentation-javascript' | bitly }}) in your project and you are off to the races.
 
-{% highlight javascript %}
+```javascript
 Ti.include('/backbeam/hmac-sha1.js')
 Ti.include('/backbeam/enc-base64.js')
 var backbeam = require('/backbeam/backbeam')
-{% endhighlight %}
+```
 
 Once included, backbeam can be called just as it would be called in a browser or in [node.js]({{ 'http://nodejs.org/' | bitly }}).
 
-{% highlight javascript %}
+```javascript
 backbeam.configure({
     project: 'your-project-name', // the subdomain of your project
     shared: 'your-shared-key',
     secret: 'your-secret-secret',
     env: 'dev' // can be 'dev' or 'pro'
 })
-{% endhighlight %}
+```
 
 Please see the documentation for respective product for more in-depth information.
 

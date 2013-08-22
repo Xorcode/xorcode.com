@@ -28,9 +28,9 @@ Make sure that `s3cmd` or `s3multiput` is in your environment path.
 
 As long as you are on an AWS instance you have the `s3multiput` utility installed and ready to start using these scripts right away. We noticed on our AWS instance that `s3multiput` did not work because FileChunkIO was not installed. The S3 command line tools are written in Python, so we installed FileChunkIO with the following command:
 
-{% highlight bash %}
+```sh
 $ sudo easy_install FileChunkIO
-{% endhighlight %}
+```
 
 ### Non-AWS scenarios
 
@@ -40,9 +40,9 @@ If you are not on an AWS instance, you have to install [s3cmd]({{ 'http://s3tool
 
 If you happen to have Ubuntu 12.04 LTS you can safely install `s3cmd` with `apt-get`.
 
-{% highlight bash %}
+```sh
 $ sudo apt-get install s3cmd
-{% endhighlight %}
+```
 
 Otherwise we recommend that you install from [source]({{ 'http://sourceforge.net/project/showfiles.php?group_id=178907&package_id=218690#files' | bitly }}).
 
@@ -56,17 +56,17 @@ As stated above it is best to add the package repository to stay up to date with
 
 Check out the source of S3 tools:
 
-{% highlight bash %}
+```sh
 $ git clone git://github.com/s3tools/s3cmd.git
 $ cd s3cmd
 $ sudo python setup.py install
-{% endhighlight %}
+```
 
 The above requires that you have the Python distutils module. On a Debian system (such as Ubuntu):
 
-{% highlight bash %}
+```sh
 $ sudo apt-get install python-setuptools
-{% endhighlight %}
+```
 
 #### Configure s3cmd
 

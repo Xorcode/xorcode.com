@@ -20,21 +20,25 @@ In order to make this tutorial lesson easier to understand we have created a bra
 
 In order to use OAuth2 with MEAN we first need to modify `package.json` to include the relevant Node.js modules that we need to use in order to enable support for OAuth authentication.
 
-    "dependencies": {
-      ...
-      "passport-http": "latest",
-      "passport-http-bearer": "latest",
-      "passport-oauth2-client-password": "latest",
-      "oauth2orize": "latest",
-      "debug": "~0.7.2"
-      ...
-    }
+```javascript package.json
+"dependencies": {
+  // ...
+  "passport-http": "latest",
+  "passport-http-bearer": "latest",
+  "passport-oauth2-client-password": "latest",
+  "oauth2orize": "latest",
+  "debug": "~0.7.2"
+  // ...
+}
+```
 
 We also added the debug module since it's used by **oauth2orize** and we decided to use the same pattern for our additions to mean.
 
 Update the dependencies in your mean project:
 
-    $ npm install
+```sh
+$ npm install
+```
 
 ## Creating supporting Models
 
@@ -72,6 +76,7 @@ This will set up our client-side routes and make sure that the application respo
 
 Finally we need to add some routes to our router.
 
+```javascript config/routes.js
     //Client Routes
     var clients = require('../app/controllers/clients');
     app.get('/clients', clients.all);
@@ -79,6 +84,7 @@ Finally we need to add some routes to our router.
     app.get('/clients/:clientId', clients.show);
     app.put('/clients/:clientId', auth.requiresLogin, auth.client.hasAuthorization, clients.update);
     app.del('/clients/:clientId', auth.requiresLogin, auth.client.hasAuthorization, clients.destroy);
+```
 
 Once we have this up and running, we're ready to create clients.
 
@@ -102,10 +108,12 @@ We need to add Passport strategies for basic authentication, client password aut
 
 Once we have added the passport strategies, we need to add a few new routes to allow clients to interact with our OAuth end-points.
 
+```javascript config/routes.js
     var oauth2 = require('./middlewares/oauth2');
     app.get('/oauth/authorize', auth.requiresLogin, oauth2.authorization, oauth2.dialog);
     app.post('/oauth/authorize/decision', auth.requiresLogin, oauth2.server.decision());
     app.post('/oauth/token', oauth2.token);
+```
 
 These three new routes use our oauth2orize server.
 
@@ -133,52 +141,59 @@ This example assumes that your main mean server runs on port 3000 and that your 
 
 Start your main server:
 
-    $ DEBUG=oauth2orize,oauth2 node server.js
-      oauth2orize register parser code request +0ms
-      oauth2orize register responder code response +2ms
-      oauth2orize register parser token request +1ms
-      oauth2orize register responder token response +0ms
-      oauth2orize register exchanger authorization_code authorization_code +0ms
-      oauth2orize register exchanger password password +1ms
-    Express app started on port 3000
+```sh
+$ DEBUG=oauth2orize,oauth2 node server.js
+  oauth2orize register parser code request +0ms
+  oauth2orize register responder code response +2ms
+  oauth2orize register parser token request +1ms
+  oauth2orize register responder token response +0ms
+  oauth2orize register exchanger authorization_code authorization_code +0ms
+  oauth2orize register exchanger password password +1ms
+Express app started on port 3000
+```
 
 Then start the testing server:
 
-    $ cd scripts
-    $ npm install
-    $ NODE_DEBUG=true node server.js
-    listening on port 4000
+```sh
+$ cd scripts
+$ npm install
+$ NODE_DEBUG=true node server.js
+listening on port 4000
+```
 
 Once the server's up and running you can navigate to http://localhost:4000/ to test your implementation by clicking on the "Authenticate with Service" link. Clicking the link will take you to the OAuth dialog of your main mean application.
 
 You should see something like this in your console log:
 
-      oauth2orize parse:request +42s
-      oauth2orize parse:request +0ms
-      oauth2 authorization:  +0ms pEdDoXEgEpSbkAzN http://localhost:4000/callback
-      oauth2 authorization:  +3ms null { clientSecret: 'unpYdLS16rlS7ITa1vVOD7hwJ8ZRzTkV',
-      clientKey: 'pEdDoXEgEpSbkAzN',
-      name: 'Web',
-      _id: 52115d123265413b29000001,
-      __v: 0,
-      created: Sun Aug 18 2013 19:47:30 GMT-0400 (EDT) }
-
+```sh
+  oauth2orize parse:request +42s
+  oauth2orize parse:request +0ms
+  oauth2 authorization:  +0ms pEdDoXEgEpSbkAzN http://localhost:4000/callback
+  oauth2 authorization:  +3ms null { clientSecret: 'unpYdLS16rlS7ITa1vVOD7hwJ8ZRzTkV',
+  clientKey: 'pEdDoXEgEpSbkAzN',
+  name: 'Web',
+  _id: 52115d123265413b29000001,
+  __v: 0,
+  created: Sun Aug 18 2013 19:47:30 GMT-0400 (EDT) }
+```
 
 Once you click "Allow" you should be taken back to the testing server where your access token should be printed.
 
 The console output on your testing server should look like this:
 
-    OAuth2 Node Request
-    Simple OAuth2: Making the HTTP request { uri: 'http://localhost:3000/oauth/token',
-      method: 'POST',
-      headers: { Authorization: 'Basic cEVkRG9YRWdFcFNia0F6Tjp1bnBZZExTMTZybFM3SVRhMXZWT0Q3aHdKOFpSelRrVg==' },
-      form: 
-       { code: 'dEErLArE919sZ38E',
-         redirect_uri: 'http://localhost:4000/callback',
-         grant_type: 'authorization_code',
-         client_id: 'pEdDoXEgEpSbkAzN',
-         secret: 'unpYdLS16rlS7ITa1vVOD7hwJ8ZRzTkV' } }
-    Simple OAuth2: checking response body {"access_token":"PE6XthpfpWcc8Veu6DC6ZLJ9lwLoqljmZ10nDMvtdFHkEKbCxyvlUBLNpTKC4Vb2cNUM2kUJqJJj9djaYbrpEWAdMBJnxWzJTUiayA9I45FBwEOxGifG9R2E9x3xiXHf52F5rAYRMQdKne1qfPe8uloxNIJ23u14bupRA3W5d3JXt8zQEcXV1Rc3C8rIbIGwMPUO8MKdW2CRwk6jDp4ksMGThpK7MpYVITxrDdvpAI11CRtiyX320AZ6I5lnwv3f","token_type":"bearer"}
+```sh
+OAuth2 Node Request
+Simple OAuth2: Making the HTTP request { uri: 'http://localhost:3000/oauth/token',
+  method: 'POST',
+  headers: { Authorization: 'Basic cEVkRG9YRWdFcFNia0F6Tjp1bnBZZExTMTZybFM3SVRhMXZWT0Q3aHdKOFpSelRrVg==' },
+  form: 
+   { code: 'dEErLArE919sZ38E',
+     redirect_uri: 'http://localhost:4000/callback',
+     grant_type: 'authorization_code',
+     client_id: 'pEdDoXEgEpSbkAzN',
+     secret: 'unpYdLS16rlS7ITa1vVOD7hwJ8ZRzTkV' } }
+Simple OAuth2: checking response body {"access_token":"PE6XthpfpWcc8Veu6DC6ZLJ9lwLoqljmZ10nDMvtdFHkEKbCxyvlUBLNpTKC4Vb2cNUM2kUJqJJj9djaYbrpEWAdMBJnxWzJTUiayA9I45FBwEOxGifG9R2E9x3xiXHf52F5rAYRMQdKne1qfPe8uloxNIJ23u14bupRA3W5d3JXt8zQEcXV1Rc3C8rIbIGwMPUO8MKdW2CRwk6jDp4ksMGThpK7MpYVITxrDdvpAI11CRtiyX320AZ6I5lnwv3f","token_type":"bearer"}
+```
 
 You are now ready to use the access token through the Bearer strategy.
 

@@ -42,17 +42,19 @@ Before running this script please make a new copy of your current terminal profi
 
 Close down Vim and copy the `solarized.vim` file into your Vim settings directory:
 
-{% highlight bash %}
+```sh
 $ mkdir -p ~/.vim/colors; cp solarized.vim ~/.vim/colors
-{% endhighlight %}
+```
 
 Now open up your Vim configuration file:
 
-{% highlight bash %}$ vim ~/.vimrc{% endhighlight %}
+```sh
+$ vim ~/.vimrc
+```
 
 Add the following to the top of the file:
 
-{% highlight vim %}
+```vim
 syntax enable
 if has('gui_running')
     set background=light
@@ -62,7 +64,7 @@ endif
 set t_Co=16
 let g:solarized_termcolors=16
 colorscheme solarized
-{% endhighlight %}
+```
 
 ## Eclipse
 

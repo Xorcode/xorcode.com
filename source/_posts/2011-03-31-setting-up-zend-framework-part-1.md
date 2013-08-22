@@ -27,7 +27,7 @@ We will create the project manually since the default settings for Zend Framewor
 
 ### File Structure
 
-{% highlight bash %}
+```sh
 myapp/
 myapp/application/
 myapp/application/configs/
@@ -46,22 +46,24 @@ myapp/public/lib/
 myapp/public/lib/css/
 myapp/public/lib/js/
 myapp/public/lib/img/
-{% endhighlight %}
+```
 
 ### Creating necessary files
 
 **myapp/public/.htaccess**
 
-<pre>RewriteEngine On
+```sh
+RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
-RewriteRule ^.*$ index.php [NC,L]</pre>
+RewriteRule ^.*$ index.php [NC,L]
+```
 
 **myapp/public/index.php**
 
-{% highlight php %}
+```php
 <?php
 // Define path to application directory
 defined('APPLICATION_PATH')
@@ -92,21 +94,21 @@ $application = new Zend_Application(
 $application->bootstrap()
             ->run();
 ?>
-{% endhighlight %}
+```
 
 **myapp/application/Bootstrap.php**
 
-{% highlight php %}
+```php
 <?php
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 }
 ?>
-{% endhighlight %}
+```
 
 **myapp/application/configs/application.xml**
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
     <global>
@@ -197,11 +199,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         </resources>
     </development>
 </config>
-{% endhighlight %}
+```
 
 **myapp/application/modules/default/controllers/IndexController.php**
 
-{% highlight php %}
+```php
 <?php
 require_once 'Zend/Controller/Action.php';
 class IndexController extends Zend_Controller_Action
@@ -229,11 +231,11 @@ class IndexController extends Zend_Controller_Action
     }
 }
 ?>
-{% endhighlight %}
+```
 
 **myapp/application/modules/default/controllers/ErrorController.php**
 
-{% highlight php %}
+```php
 <?php
 require_once 'Zend/Controller/Action.php';
 class ErrorController extends Zend_Controller_Action
@@ -284,11 +286,11 @@ class ErrorController extends Zend_Controller_Action
     }
 }
 ?>
-{% endhighlight %}
+```
 
 **myapp/library/Myapp/Application/Resource/View.php**
 
-{% highlight php %}
+```sh
 <?php
 require_once ('Zend/Application/Resource/ResourceAbstract.php');
 class Myapp_Application_Resource_View extends Zend_Application_Resource_ResourceAbstract
@@ -319,11 +321,11 @@ class Myapp_Application_Resource_View extends Zend_Application_Resource_Resource
     }
 }
 ?>
-{% endhighlight %}
+```
 
 **myapp/application/layouts/scripts/layout.phtml**
 
-{% highlight html+php %}
+```php
 <?php echo $this->doctype() . PHP_EOL; ?>
 <html>
 
@@ -339,17 +341,17 @@ class Myapp_Application_Resource_View extends Zend_Application_Resource_Resource
 <?php echo $this->layout()->content . PHP_EOL; ?>
 </body>
 </html>
-{% endhighlight %}
+```
 
 **myapp/application/modules/default/views/scripts/index/index.phtml**
 
-{% highlight html+php %}
+```php
 <h1>Index page</h1>
-{% endhighlight %}
+```
 
 **myapp/application/modules/default/views/scripts/error/error.phtml**
 
-{% highlight html+php %}
+```php
 <h1>Application Error</h1>
 
 <?php if (isset($this->exception)): ?>
@@ -362,11 +364,11 @@ class Myapp_Application_Resource_View extends Zend_Application_Resource_Resource
 <h3>Request Parameters:</h3>
 <pre class="code"><?php echo var_export($this->request->getParams(), true) ?></pre>
 <?php endif ?>
-{% endhighlight %}
+```
 
 **myapp/application/modules/default/views/scripts/error/notfound.phtml**
 
-{% highlight html+php %}
+```php
 <h1>Page not found</h1>
 
 <?php if (isset($this->exception)): ?>
@@ -392,7 +394,7 @@ class Myapp_Application_Resource_View extends Zend_Application_Resource_Resource
 </ul>
 
 <?php endif ?>
-{% endhighlight %}
+```
 
 ## Further Reading
 

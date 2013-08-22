@@ -18,11 +18,11 @@ Time to modify jekyll itself.
 
 Open up **jekyll/bin/jekyll** and add this new option:
 
-{% highlight ruby %}
+```ruby
   opts.on("--[no-]production", "Production mode (default development)") do |production|
     options['production'] = production
   end
-{% endhighlight %}
+```
 
 {% gist 3360764/jekyll.rb %}
 

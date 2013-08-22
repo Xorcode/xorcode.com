@@ -23,8 +23,10 @@ The domain you use for your Dokku server needs to support wildcard sub-domains.
 
 An example has been provided below:
 
-    example.org    A     <Elastic IP>
-    *              A     <Elastic IP>
+```
+example.org    A     <Elastic IP>
+*              A     <Elastic IP>
+```
 
 Your server also needs to be able to respond to port 80, make sure that the Security Group for the server includes a rule that opens port 80 to `0.0.0.0/0` to ensure a proper working server.
 
@@ -36,20 +38,26 @@ Also create a new Elastic IP and assign it to your newly created instance. Modif
 
 Set `/etc/hostname` to this domain name and make sure to also change the server host name.
 
-    $ sudo cat "example.org" > /etc/hostname
-    $ sudo hostname example.org
+```sh
+$ sudo cat "example.org" > /etc/hostname
+$ sudo hostname example.org
+```
 
 ### Installing Dokku
 
 After following the steps above, run the following command line script as the user **ubuntu**:
 
-    $ wget -qO- https://raw.github.com/progrium/dokku/master/bootstrap.sh | sudo bash
+```sh
+$ wget -qO- https://raw.github.com/progrium/dokku/master/bootstrap.sh | sudo bash
+```
 
 Dokku will begin installation, a process which usually takes less than five minutes to complete.
 
 Once installation completes, Dokku will notify you to create a git key. Open a new terminal window on your local machine. Determine which SSH key to use for authentication. Most systems use either `id_dsa` or `id_rsa` by default.
 
-    $ cat ~/.ssh/id_rsa.pub | ssh example.org "sudo gitreceive upload-key example"
+```sh
+$ cat ~/.ssh/id_rsa.pub | ssh example.org "sudo gitreceive upload-key example"
+```
 
 Once you have added your key to the Dokku server you are ready to deploy your first application to your new PaaS!
 
@@ -57,9 +65,11 @@ Once you have added your key to the Dokku server you are ready to deploy your fi
 
 Dokku supports Node.js as well as several other [buildpacks]({{ 'https://github.com/progrium/buildstep#supported-buildpacks' | bitly }}). In order to deploy your application to your Dokku instance follow these simple steps.
 
-    $ cd node-js-sample
-    $ git remote add example git@example.org:node-js-app
-    $ git push example master
+```sh
+$ cd node-js-sample
+$ git remote add example git@example.org:node-js-app
+$ git push example master
+```
 
 This will initialize the deployment process and bootstrap your Node.js application on your Dokku server.
 

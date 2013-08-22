@@ -16,49 +16,55 @@ Set up a scalable server farm in less than 10 minutes with Amazon Elastic Comput
 > <img class="pull-right" src="/uploads/2011/03/aws_logo.png">Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides resizable compute capacity in the cloud. It is designed to make web-scale computing easier for developers.</blockquote>
 If you have used EC2 at all you must have wondered how you can automate the creation of instances in your load balancer. So did we. After much searching and various testing back and forth we came up with the following solution.
 
-<strong>Dependencies</strong>
+## Dependencies
 
 The EC2 tools all require Java to be installed. Follow the instructions for your operating system in order to install a Java runtime environment.
 
-<strong>Requirements</strong>
+## Requirements
 
 First you need to install these tools from Amazon:
 
-<ul>
-	<li><a href="http://aws.amazon.com/developertools/351" target="_blank">EC2 API Command Line Tools</a></li>
-	<li><a href="http://aws.amazon.com/developertools/2535" target="_blank">EC2 Auto-Scaling API Tools</a></li>
-	<li><a href="http://aws.amazon.com/developertools/2534" target="_blank">EC2 CloudWatch API Tools</a></li>
-</ul>
+- [EC2 API Command Line Tools](http://aws.amazon.com/developertools/351)
+- [EC2 Auto-Scaling API Tools](http://aws.amazon.com/developertools/2535)
+- [EC2 CloudWatch API Tools](http://aws.amazon.com/developertools/2534)
 
 To make these exercises easier for you to read we have selected Ubuntu as our operating system. If you have a Mac there are very few things you need to change apart from how to install the above mentioned command line tools.
 
 The EC2 command line tools are available through the Ubuntu Multiverse repository which you can activate through your package manager. Once you have done this, run the following command to install the tools:
-<pre class="prettyprint"># sudo apt-get install ec2-api-tools</pre>
-Once you have installed the tools you need to download your key pair from Amazon so that you can access the API via the tools. In order to do this you need to access them through your <a href="http://aws.amazon.com/account/" target="_blank">AWS Account</a>. Once there, click the "<a href="https://aws-portal.amazon.com/gp/aws/developer/account/index.html?ie=UTF8&amp;action=access-key" target="_blank">Security Credentials</a>" link, here you need to create an X.509 Certificate for use with the EC2 Tools.
 
-<img class="alignnone size-full wp-image-57" title="X.509 Certificates - Create Certificate" src="/uploads/2011/03/createcert.png" alt="" />
+```sh
+$ sudo apt-get install ec2-api-tools
+```
+
+Once you have installed the tools you need to download your key pair from Amazon so that you can access the API via the tools. In order to do this you need to access them through your [AWS Account](http://aws.amazon.com/account/). Once there, click the "[Security Credentials](https://aws-portal.amazon.com/gp/aws/developer/account/index.html?ie=UTF8&amp;action=access-key)" link, here you need to create an X.509 Certificate for use with the EC2 Tools.
+
+![X.509 Certificates - Create Certificate](/uploads/2011/03/createcert.png)
 
 Download both the Private Key File and the X.509 Certificate by using the two buttons.
 
-<img class="alignnone size-full wp-image-58" title="Download X.509 Certificate" src="/uploads/2011/03/x.509cert.png" alt="" />
+![Download X.509 Certificate](/uploads/2011/03/x.509cert.png)
 
 Store your private key file somewhere safe. Like the text above states, if you lose it, there is no way to recover and you will have to create a new certificate. This is especially important with your SSH key used with your instances since you will lose SSH access if you lose your private key part.
 
 Once you have both certificate parts, create the following directory:
-<pre class="prettyprint">EC2</pre>
-In this directory create sub directories for <code>CloudWatch</code> and <code>AutoScaling</code>. Extract the respective tools into these directories and create the following files:
+```sh
+EC2
+```
+In this directory create sub directories for `CloudWatch` and `AutoScaling`. Extract the respective tools into these directories and create the following files:
 
-<strong>exports.sh</strong>
-<pre class="prettyprint lang-sh">#!/bin/sh
+```sh exports.sh
+#!/bin/sh
 export EC2_PRIVATE_KEY=`pwd`/pk-XXXXXXXXXXXXXXXXXXXXXXXX.pem
 export EC2_CERT=`pwd`/cert-XXXXXXXXXXXXXXXXXXXXXXXX.pem
 export AWS_ELB_HOME=`pwd`/ELB
 export AWS_AUTO_SCALING_HOME=`pwd`/AutoScaling
 export AWS_CLOUDWATCH_HOME=`pwd`/CloudWatch
 export JAVA_HOME=/usr
-export PATH=$PATH:$AWS_ELB_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$AWS_CLOUDWATCH_HOME/bin</pre>
-<strong>setup.sh</strong>
-<pre class="prettyprint lang-sh">#!/bin/sh
+export PATH=$PATH:$AWS_ELB_HOME/bin:$AWS_AUTO_SCALING_HOME/bin:$AWS_CLOUDWATCH_HOME/bin
+```
+
+```sh setup.sh
+#!/bin/sh
 EC2_ROOT=`dirname $0`
 . $EC2_ROOT/exports.sh
 chmod +x $EC2_ROOT/AutoScaling/bin/*
@@ -67,13 +73,15 @@ chmod +x $EC2_ROOT/ELB/bin/*
 chmod -x $EC2_ROOT/ELB/bin/*.cmd
 chmod +x $EC2_ROOT/CloudWatch/bin/*
 chmod -x $EC2_ROOT/CloudWatch/bin/*.cmd
-chmod +x $EC2_ROOT/*.sh</pre>
-We are simply being lazy above and making sure that all executable files are executable and that the *.cmd files are not.
+chmod +x $EC2_ROOT/*.sh
+```
+
+We are simply being lazy above and making sure that all executable files are executable and that the `*.cmd` files are not.
 
 Now we can create the actual script that sets up our auto-scaling load balancer!
 
-<strong>setup-autoscaling.sh</strong>
-<pre class="prettyprint lang-sh">#!/bin/sh
+```sh setup-autoscaling.sh
+#!/bin/sh
 
 . ./exports.sh
 ./setup.sh
@@ -120,5 +128,7 @@ mon-put-metric-alarm MyLowCPUAlarm1 --comparison-operator LessThanThreshold
     --evaluation-periods 1 --metric-name CPUUtilization --namespace "AWS/EC2"
     --period 600 --statistic Average --threshold 10
     --alarm-actions $SCALE_DOWN_POLICY
-    --dimensions "AutoScalingGroupName=$SG_NAME"</pre>
+    --dimensions "AutoScalingGroupName=$SG_NAME"
+```
+
 With the above script you will have a load balancer set up to scale between 2 and 6 instances. Feel free to tweak the values here to ensure that it works best for you.

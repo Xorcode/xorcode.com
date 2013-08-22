@@ -19,11 +19,15 @@ Flatiron supports application boilerplates as well as straight inclusion in your
 
 In order to get started with flatiron it needs to be installed on your system.
 
-    $ npm install flatiron -g
+```sh
+$ npm install flatiron -g
+```
 
 Once installed, the `flatiron` command line tool will be available. In order to start with a new web application boilerplate, issue the following command:
 
-    $ flatiron create <app-name> http
+```sh
+$ flatiron create <app-name> http
+```
 
 The boilerplate allows you to quickly start scaffolding a web application without a lot of custom development.
 
@@ -75,14 +79,16 @@ By using the `restful` middleware plugin our application automatically discovers
 
 Our application now reports the following available resources:
 
-    GET     / 
-    GET     /api 
-    GET     /api/user 
-    POST    /api/user 
-    POST    /api/user/([._a-zA-Z0-9-]+) 
-    GET     /api/user/([._a-zA-Z0-9-]+) 
-    DELETE  /api/user/([._a-zA-Z0-9-]+) 
-    PUT     /api/user/([._a-zA-Z0-9-]+) 
+```
+GET     / 
+GET     /api 
+GET     /api/user 
+POST    /api/user 
+POST    /api/user/([._a-zA-Z0-9-]+) 
+GET     /api/user/([._a-zA-Z0-9-]+) 
+DELETE  /api/user/([._a-zA-Z0-9-]+) 
+PUT     /api/user/([._a-zA-Z0-9-]+) 
+```
 
 Change the `explore` configuration option to `false` in order to not expose available API end-points.
 
