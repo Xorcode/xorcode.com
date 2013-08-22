@@ -67,12 +67,13 @@ assets:
     - _assets/js
     - _assets/less
     - _assets/img
-  js_compressor: uglifier
-  css_compressor: sass
   cachebust: hard
   cache: false
   gzip: [ text/css, application/javascript ]
   debug: false
+  compress:
+    css: sass
+    js: uglifier
 
 # ----------------------- #
 #   3rd Party Settings    #
