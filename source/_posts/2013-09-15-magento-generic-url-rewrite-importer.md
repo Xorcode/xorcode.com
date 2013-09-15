@@ -12,6 +12,13 @@ Xorcode just moved a sizable e-commerce site from [WordPress](http://xorcode.net
 
 Manually entering 20,000+ URL rewrites didn't sound like fun, so we looked at other options. We could buy an extension, or we could write our own for this specific task. We choose to roll our own. Since we wrote it, we'll share it with you, for free. If you use it and like it, you can always [Flattr](https://flattr.com/profile/xorcode) this article, or send us a donation with PayPal.
 
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="SADU3WX2H6CFY">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
 ### Usage
 
 Install the extension in your Magento site by logging into your admin panel and going to *Magento Connect Manager*, which is under the *System* menu. Once there, use the **Direct package file upload** option and upload the package file supplied with this article.
