@@ -76,7 +76,7 @@ You'll see output similar to this:
 
 ## Name requests properly in Geddy
 
-Open up `app/controllers.application.js` and change its contents to the following:
+Open up `app/controllers/application.js` and change its contents to the following:
 
 ```
 var newrelic = require('newrelic');
