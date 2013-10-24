@@ -96,8 +96,16 @@ We are using `newrelic.setControllerName()` to name our requests so that they do
 
     $ node app
 
-Navigate to http://localhost:4000/ and then http://localhost:4000/users where you can start adding, editing, and removing users to get some sample data in your New Relic account.
+Navigate to [http://localhost:4000/](http://localhost:4000/) and then [http://localhost:4000/users](http://localhost:4000/users) where you can start adding, editing, and removing users to get some sample data in your New Relic account.
 
 Once you start your application you will begin to see data in New Relic within five minutes and your brand new Node.js application will be accessible from your New Relic dashboard.
+
+## Repository
+
+You can take a look at our example repository if you want to make sure you didn't miss anything.
+
+<a href="https://bitbucket.org/xorcode/geddy-newrelic-tutorial/" class="btn btn-info"><i class="icon-bitbucket"></i> Fork on Bitbucket</a>
+
+## Documentation
 
 For more information, please see the [Geddy documentation](http://geddyjs.org/reference#controllers.params) on controllers as well as the [New Relic Node.js project](https://github.com/newrelic/node-newrelic/#transactions-and-request-naming).
