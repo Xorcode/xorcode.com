@@ -3,31 +3,22 @@ layout: default
 single: true
 ---
 
-<section class="section-wrapper post-w">
+<div class="white">
   <div class="container">
-    {% unless page.sidebar == false %}
-      <div class="row">
-        <div class="span8">
-          {% include article.html %}
-          {% include disqus_comments.html %}
-        </div>
-        <div class="span4">
-          <div class="blog-side-bar">
-            {% if site.post_asides.size %}
-              {% include_array post_asides %}
-            {% else %}
-              {% include_array default_asides %}
-            {% endif %}
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        {% include article.html %}
       </div>
-    {% else %}
-      <div class="row">
-        <div class="span12">
-          {% include article.html %}
-          {% include disqus_comments.html %}
-        </div>
-      </div>
-    {% endunless %}
+    </div>
   </div>
-</section>
+</div>
+<div class="grey">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+        {% include post/author.html %}
+        {% include disqus_comments.html %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -23,44 +23,18 @@
 {% if author %}
   {% capture meta %}
     {% if author_twitter %}
-      <a href="https://twitter.com/{{ author_twitter }}" class="btn btn-mini"><i class="icon-twitter"></i> twitter</a>
+      <a href="https://twitter.com/{{ author_twitter }}" class="btn btn-default btn-xs"><i class="fa fa-twitter"></i> twitter</a>
     {% endif %}
     {% if author_github %}
-      <a href="https://github.com/{{ author_github }}" class="btn btn-mini"><i class="icon-github"></i> github</a>
+      <a href="https://github.com/{{ author_github }}" class="btn btn-default btn-xs"><i class="fa fa-github"></i> github</a>
     {% endif %}
     {% if author_bitbucket %}
-      <a href="https://bitbucket.com/{{ author_bitbucket }}" class="btn btn-mini"><i class="icon-bitbucket"></i> bitbucket</a>
+      <a href="https://bitbucket.com/{{ author_bitbucket }}" class="btn btn-default btn-xs"><i class="fa fa-bitbucket"></i> bitbucket</a>
     {% endif %}
   {% endcapture %}
-  <div class="post-author-w">
-    <h3 class="section-header">About the Author</h3>
-    <div class="row">
-      {% if author_email %}
-        <div class="span1">
-          <div class="post-author-photo hidden-phone">
-            <img src="{{ author_email | gravatar }}" />
-          </div>
-        </div>
-        <div class="span7">
-          <div class="post-author-bio-w">
-            <div class="post-author-name">
-              {{ author }}
-            </div>
-            {% if author_bio %}<div class="post-author-bio">{{ author_bio }}</div>{% endif %}
-            {% if meta %}<div class="post-author-meta">{{ meta }}</div>{% endif %}
-          </div>
-        </div>
-      {% else %}
-        <div class="span8">
-          <div class="post-author-bio-w">
-            <div class="post-author-name">
-              {{ author }}
-            </div>
-            {% if author_bio %}<div class="post-author-bio">{{ author_bio }}</div>{% endif %}
-            {% if meta %}<div class="post-author-meta">{{ meta }}</div>{% endif %}
-          </div>
-        </div>
-      {% endif %}
-    </div>
-  </div>
+  <p>
+    {% if author_email %}<img src="{{ author_email | gravatar }}" class="img-circle" style="width:50px;" /> {% endif %}<span class="ba">{{ author }}</span>
+  </p>
+  {% if author_bio %}<p class="post-author-bio">{{ author_bio }}</p>{% endif %}
+  {% if meta %}<p class="post-author-meta">{{ meta }}</p>{% endif %}
 {% endif %}

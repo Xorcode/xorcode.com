@@ -4,85 +4,48 @@ title: Custom Node.js, PHP, and Android software development
 description: Custom Node.js, Python, Ruby, PHP, Perl and Android development. Articles about programming and cloud platforms.
 ---
 
-<div class="carousel slide over-something" id="homepage-carousel">
-  <div class="carousel-inner slider-w">
-    <div class="active item">
+    <!-- +++++ Welcome Section +++++ -->
+    <div class="wwi">
       <div class="container">
-        <h1 class="slider-header">You started using tools <strong>800,000</strong> years ago</h1>
-        <h2 class="slider-sub-header">We write software that evolves your toolbox from tedious to awesome.</h2>
-        <div class="cta">
-          <a href="{{ root_url }}/contact.html" class="btn btn-cta btn-warning">Let us help You create!</a>
-        </div>
-        <div class="slider-browsers-w clearfix">
-          <div class="slider-browser slider-browser-left hidden-phone" data-position-bottom="-8%">
-            <img alt="Browser-window-1" src="{% asset_path browser-ecommerce.png %}" />
-          </div>
-          <div class="slider-browser slider-browser-center" data-position-bottom="-9%">
-            <img alt="Browser-window-2" src="{% asset_path browser-mobile.png %}" />
-          </div>
-          <div class="slider-browser slider-browser-right hidden-phone" data-position-bottom="-8%">
-            <img alt="Browser-window-3" src="{% asset_path browser-security.png %}" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <a class="carousel-control left" data-slide="prev" href="#homepage-carousel">
-    <i class="icon-chevron-left"></i>
-  </a>
-  <a class="carousel-control right" data-slide="next" href="#homepage-carousel">
-    <i class="icon-chevron-right"></i>
-  </a>
-</div>
-<div class="sub-slider-features">
-  <div class="container">
-    <div class="row">
-      <div class="span4">
-        <div class="info-bullet">
-          <i class="icon-beaker"></i>
-          <h5>Custom Development</h5>
-          <p>Xorcode delivers premium business tools designed to strengthen, simplify, and structure the business of our customers.</p>
-        </div>
-      </div>
-      <div class="span4">
-        <div class="info-bullet">
-          <i class="icon-android"></i>
-          <h5>Android Applications</h5>
-          <p>Xorcode provides custom Android application development services aimed at delivering the best applications.</p>
-        </div>
-      </div>
-      <div class="span4">
-        <div class="info-bullet">
-          <i class="icon-tasks"></i>
-          <h5>Quality Assurance</h5>
-          <p>Xorcode helps you ascertain that your application meets its set of requirements and specifications.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 centered">
+            <img src="{% asset_path origami-sheep.png %}" width="250">
+            <h1>You started using tools 800,000 years ago</h1>
+            <p>We write software that evolves your toolbox from tedious to awesome. We farm servers in the clouds and conjure confluent code from pixie dust and meteorite slag. If besought, we will help you find the castle with the princess.</p>
+          </div><!-- /col-lg-8 -->
+        </div><!-- /row -->
+        </div> <!-- /container -->
+    </div><!-- /wwi -->
 
-<section class="section-wrapper stripped under-slider">
-  <div class="container">
-    <div class="row">
-      <div class="span12">
-        <h3 class="section-header">From the Blog</h3>
+    <div class="ww">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 centered">
+            <form class="form-inline" role="form" action="http://xorcode.us7.list-manage.com/subscribe/post?u=dc14842b34179e11056373cdb&id=c1a59855ef" method="post">
+              <div class="form-group col-sm-8">
+                <label class="sr-only" for="newsletter-email">Enter your email address</label>
+                <input type="email" class="form-control input-lg" id="newsletter-email" placeholder="Enter your email address" name="EMAIL">
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg newsletter-submit">Send Me Updates!</button>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-      {% assign index = true %}
-      {% for post in paginator.posts limit:3 %}
-        {% assign content = post.content %}
-        <div class="span4 equal">
+    </div>  
+
+    {% assign index = true %}
+    <div class="container pt">
+      {% for post in paginator.posts limit:9 %}
+        {% cycle 'add rows': '<div class="row">', nil, nil %}
+        <div class="col-md-4">
+          {% assign content = post.content %}
           {% include article.html %}
         </div>
+        {% cycle 'close rows': nil, nil, '</div>' %}
       {% endfor %}
+      {% cycle 'close rows': nil, nil, '</div>' %}
     </div>
-    <div class="row">
-      {% for post in paginator.posts offset:3 limit:3 %}
-        {% assign content = post.content %}
-        <div class="span4 equal">
-          {% include article.html %}
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>

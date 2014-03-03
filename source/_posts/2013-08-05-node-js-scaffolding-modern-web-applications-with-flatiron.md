@@ -108,4 +108,4 @@ With this custom boilerplate we are now ready to start cranking out pages as wel
 
 Feel free to fork our repository to add your own modifications. We greatly appreciate pull requests with improvements and new ideas!
 
-<a href="https://github.com/Xorcode/flatiron-example" class="btn btn-large btn-info"><i class="icon-github"></i> Fork on Github</a>
+<a href="https://github.com/Xorcode/flatiron-example" class="btn btn-primary"><i class="fa fa-github"></i> Fork on Github</a>

@@ -3,7 +3,7 @@ layout: post
 title: "Solarized Dark theme for Textual"
 date: 2013-08-23 14:43
 comments: true
-categories: [Tidbits]
+categories: [Code]
 tags: [solarized,textual,theme]
 ---
 After looking through the available themes for [Textual](http://xorcode.net/1azypgm), one of the best <abbr title="Internet Relay Chat">IRC</abbr> clients for [Mac OS X](http://xorcode.net/1azyXCX), we decided to roll our own Solarized Dark theme by cloning the Sapientia theme packaged with Textual.
@@ -23,4 +23,4 @@ $ git clone https://github.com/Xorcode/textual-solarized-dark.git
 
 Feel free to fork our repository to contribute changes, bug fixes, and features. If you run into any problems with the theme, please create an [issue](http://xorcode.net/1azz9C6).
 
-<a class="btn btn-info" href="http://xorcode.net/1azzioV"><i class="icon-github"></i> Fork textual-solarized-dark on Github</a>
+<a class="btn btn-primary" href="http://xorcode.net/1azzioV"><i class="fa fa-github"></i> Fork textual-solarized-dark on Github</a>

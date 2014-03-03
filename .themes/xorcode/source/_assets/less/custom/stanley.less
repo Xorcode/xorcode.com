@@ -1,0 +1,256 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #333;
+}
+
+h1 {
+  font-size: 35px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* Paragraph & Typographic */
+p {
+  line-height: 28px;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+blockquote {
+  p {
+    line-height: 34px;
+  }
+}
+
+.code, .gist {
+  margin-bottom: 25px;
+}
+
+.centered {
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: #D11F2E;
+  word-wrap: break-word;
+  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+  transition: color 0.1s ease-in, background 0.1s ease-in;
+  &:hover, &:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+  }
+  &:before, &:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+  }
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+
+.navbar {
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.navbar-toggle {
+  margin-top: 11px;
+}
+
+.navbar-inverse {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: #9D1A2F;
+  border-color: #16a085;
+  .navbar-nav > li > a {
+    color: white;
+    :hover {
+      color: #222222;
+    }
+  }
+  .navbar-brand {
+    color: white;
+  }
+  .navbar-toggle {
+    border-color: transparent;
+  }
+}
+
+.progress-bar-theme {
+  background-color: #D11F2E;
+}
+
+@media (max-width: @screen-sm-min) {
+  .navbar-brand img {
+    height: 25px;
+  }
+  .navbar-inverse {
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+  .newsletter-submit {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .form-group {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+@media (min-width: @screen-sm) {
+  .navbar-nav > li > a {
+    padding-top: 31px;
+    padding-bottom: 20px;
+  }
+}
+
+/* Helpers */
+
+.mt {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.pt {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* +++++ WRAP SECTIONS +++++ */
+
+.ww {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #f2f2f2;
+}
+
+.wwi {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background: rgb(254,254,253); /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZWZlZmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzdjMGEyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(254,254,253,1) 0%, rgba(199,192,162,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(254,254,253,1)), color-stop(100%,rgba(199,192,162,1))); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(254,254,253,1) 0%,rgba(199,192,162,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  rgba(254,254,253,1) 0%,rgba(199,192,162,1) 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  rgba(254,254,253,1) 0%,rgba(199,192,162,1) 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  rgba(254,254,253,1) 0%,rgba(199,192,162,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefd', endColorstr='#c7c0a2',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+
+.footer {
+  background-color: #2f2f2f;
+  padding-top: 50px;
+  padding-bottom: 50px; 
+  p {
+    color: white;
+  }
+  h4 {
+    color: white;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+  }
+  li {
+    line-height: 28px;
+    font-size: 16px;
+  }
+  &.dark {
+    background-color: #131313;
+  }
+
+  &.dark a {
+    color: #888888 !important;
+  }
+
+  &.thin {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+/* +++++ Color Wraps / Blog Page +++++ */
+
+.grey {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f2f2f2;
+}
+
+.white {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #ffffff;
+}
+
+.post-content {
+  margin-top: 10px;
+}
+
+/* Blog Date*/
+.post-date,
+.post-comments,
+.post-like,
+.post-info {
+  font-size: 12px;
+  color: #d2d2d2;
+}
+.post-date {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* Blog Author*/
+.ba {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* Blog Quote */
+.bq {
+  font-size: 22px;
+  padding-top: 30px;
+}
+
+/* Blog Tags */
+.bt {
+  font-size: 12px;
+}

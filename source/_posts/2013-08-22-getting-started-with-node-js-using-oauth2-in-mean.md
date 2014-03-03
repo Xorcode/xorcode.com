@@ -12,11 +12,11 @@ Once you have an application based on [MEAN](http://xorcode.net/17N7RmC) you may
 
 <!--more-->
 
-<p class="alert">This article would not exist if it wasn't for <strong>willwh</strong> from the <strong>#node.js</strong> channel on <a href="http://xorcode.net/17N68O4">FreeNode</a> who asked how to connect MEAN to an iOS application.</p>
+<p class="alert alert-info">This article would not exist if it wasn't for <strong>willwh</strong> from the <strong>#node.js</strong> channel on <a href="http://xorcode.net/17N68O4">FreeNode</a> who asked how to connect MEAN to an iOS application.</p>
 
 In order to make this tutorial lesson easier to understand we have created a branch of MEAN which you can checkout and toy around with.
 
-<a href="http://xorcode.net/1av99Yo" class="btn btn-info"><i class="icon-github"></i> Clone our MEAN repository</a>
+<a href="http://xorcode.net/1av99Yo" class="btn btn-primary"><i class="fa fa-github"></i> Clone our MEAN repository</a>
 
 In order to use OAuth2 with MEAN we first need to modify `package.json` to include the relevant Node.js modules that we need to use in order to enable support for OAuth authentication.
 
