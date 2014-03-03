@@ -2,7 +2,7 @@
 layout: post
 title: "Google Beats Bing on Programming Questions"
 description: ""
-categories: Tidbits
+categories: [Tidbits]
 tags: [google,bing,seo]
 ---
 

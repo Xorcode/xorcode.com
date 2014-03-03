@@ -3,7 +3,7 @@ layout: post
 title: "Jekyll: Generate Bit.ly Links on The Fly with Liquid"
 description: "Generate Bit.ly Links on The Fly with Liquid in Jekyll"
 comments: true
-categories: Code
+categories: [Code]
 tags: [jekyll,liquid,bitly]
 description: Filter links with Liquid to effortlessly turn them into bit.ly links on the fly with this plugin.
 ---
