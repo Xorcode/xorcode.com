@@ -1,62 +1,48 @@
-<footer>
-  <div class="pre-footer">
-    <div class="container">
-      <div class="row">
-        <div class="span3 hidden-phone hidden-tablet">
-          <div class="footer-logo">
-            <a><strong>Xorcode</strong>, LLC</a>
+    <!-- +++++ Footer Section +++++ -->
+
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h4>Headquarters</h4>
+            <p>
+              4214 Cantey Pl,<br/>
+              Charlotte, NC 28211<br/>
+              +1 (980) 355-9056
+            </p>
+          </div><!-- /col-md-4 -->
+
+          <div class="col-md-4">
+            <h4>Connect with Us</h4>
+            <ul class="list-unstyled">
+              <li><a href="{{ 'https://github.com/Xorcode' | bitly }}"><i class="fa fa-github"></i> Github</a></li>
+              <li><a href="{{ 'https://bitbucket.org/xorcode' | bitly }}"><i class="fa fa-bitbucket"></i> Bitbucket</a></li>
+              <li><a href="{{ 'https://twitter.com/xorcode' | bitly }}"><i class="fa fa-twitter"></i> Twitter</a></li>
+              <li><a href="{{ 'http://www.linkedin.com/company/xorcode-llc' | bitly }}"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+              <li><a href="{{ 'http://www.facebook.com/xorcode' | bitly }}"><i class="fa fa-facebook"></i> Facebook</a></li>
+              <li><a href="https://plus.google.com/113260197271028234186" rel="publisher"><i class="fa fa-google-plus"></i> Google+</a></li>
+            </ul>
+          </div><!-- /col-md-4 -->
+
+          <div class="col-md-4">
+            <h4>Xorcode</h4>
+            <p>Xorcode delivers premium business tools designed to strengthen, simplify, and structure the business of our customers.</p>
+          </div><!-- /col-md-4 -->
+        </div>
+      </div>
+    </div>
+
+    <div class="footer dark thin">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            Copyright &copy; 2003&mdash;{{ site.time | date: "%Y" }} Xorcode, LLC. All rights reserved.
           </div>
-          <ul class="footer-address">
-            <li>
-              <strong>Address:</strong>
-              4214 Cantey Pl<br/>
-              Charlotte, NC 28211, USA
-            </li>
-            <li>
-              <strong>Phone:</strong>
-              (980) 355-9056
-            </li>
-          </ul>
-        </div>
-        <div class="span5">
-          <h5 class="footer-header">Recent Posts</h5>
-          <ul class="footer-list">
-            {% for post in site.posts limit:site.recent_posts %}
-              <li>
-                <a href="{{ root_url }}{{ post.url }}">{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-        <div class="span3 offset1">
-          <h5 class="footer-header">Connect With Us</h5>
-          <ul class="footer-list unstyled">
-            <li><a href="{{ 'https://github.com/Xorcode' | bitly }}"><i class="icon-github-sign"></i> Github</a></li>
-            <li><a href="{{ 'https://bitbucket.org/xorcode' | bitly }}"><i class="icon-bitbucket-sign"></i> Bitbucket</a></li>
-            <li><a href="{{ 'https://twitter.com/xorcode' | bitly }}"><i class="icon-twitter-sign"></i> Twitter</a></li>
-            <li><a href="{{ 'http://www.linkedin.com/company/xorcode-llc' | bitly }}"><i class="icon-linkedin-sign"></i> LinkedIn</a></li>
-            <li><a href="{{ 'http://www.facebook.com/xorcode' | bitly }}"><i class="icon-facebook-sign"></i> Facebook</a></li>
-            <li><a href="https://plus.google.com/113260197271028234186" rel="publisher"><i class="icon-google-plus-sign"></i> Google+</a></li>
-          </ul>
+          <div class="col-md-4">
+            <a href="{{ root_url }}/contact.html">Contact Us</a> |
+            <a href="{{ root_url }}/privacy-policy.html">Privacy Policy</a> |
+            <a href="{{ root_url }}/terms-of-use.html">Terms Of Use</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="deep-footer">
-    <div class="container">
-      <div class="row">
-        <div class="span6">
-          <div class="copyright">Copyright &copy; 2003-{{ site.time | date: "%Y" }} Xorcode, LLC. All rights reserved.</div>
-        </div>
-        <div class="span6">
-          <ul class="footer-links">
-            <li><a href="{{ root_url }}/">Home</a></li>
-            <li><a href="{{ root_url }}/contact.html">Contact Us</a></li>
-            <li><a href="{{ root_url }}/privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="{{ root_url }}/terms-of-use.html">Terms Of Use</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>

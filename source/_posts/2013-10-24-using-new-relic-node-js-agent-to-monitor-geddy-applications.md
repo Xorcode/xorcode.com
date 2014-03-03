@@ -104,7 +104,7 @@ Once you start your application you will begin to see data in New Relic within f
 
 You can take a look at our example repository if you want to make sure you didn't miss anything.
 
-<a href="https://bitbucket.org/xorcode/geddy-newrelic-tutorial/" class="btn btn-info"><i class="icon-bitbucket"></i> Fork on Bitbucket</a>
+<a href="https://bitbucket.org/xorcode/geddy-newrelic-tutorial/" class="btn btn-primary"><i class="fa fa-bitbucket"></i> Fork on Bitbucket</a>
 
 ## Documentation
 

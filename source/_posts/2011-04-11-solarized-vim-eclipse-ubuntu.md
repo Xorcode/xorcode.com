@@ -18,7 +18,7 @@ We discovered [Solarized](http://xorcode.net/ejFgVg) by Ethan Schoonover and ins
 
 [Solarized](http://xorcode.net/ejFgVg) comes with color profiles for Mac OS X, Vim, Mutt, as well as with color palettes for Adobe Photoshop, Apple Color Picker, and GIMP.
 
-<a class="btn js-btn" href="http://ethanschoonover.com/solarized/files/solarized.zip">Download Solarized</a>
+<a class="btn btn-primary" href="http://ethanschoonover.com/solarized/files/solarized.zip"><i class="fa fa-download"></i> Download Solarized</a>
 
 ![Solarized Explained](/uploads/2011/04/solarized-vim.png)
 
@@ -70,13 +70,13 @@ colorscheme solarized
 
 Eclipse requires you to download the Eclipse Color Theme plug-in before you can use the Solarized theme.
 
-<a class="btn btn-js" href="http://xorcode.net/dSgWwf">Download Eclipse Color Theme</a>
+<a class="btn btn-primary" href="http://xorcode.net/dSgWwf"><i class="fa fa-download"></i> Download Eclipse Color Theme</a>
 
 Once you have downloaded and installed the Eclipse plug-in you can download the Solarized Dark and Solarized Light themes.
 
-<a class="btn btn-js" href="http://xorcode.net/h0Op38">Solarized Dark Theme</a>
+<a class="btn btn-primary" href="http://xorcode.net/h0Op38"><i class="fa fa-download"></i> Solarized Dark Theme</a>
 
-<a class="btn btn-js" href="http://xorcode.net/fL6Jps">Solarized Light Theme</a>
+<a class="btn btn-primary" href="http://xorcode.net/fL6Jps"><i class="fa fa-download"></i> Solarized Light Theme</a>
 
 Several other syntax highlighters and adaptations of Ethan's Solarized exist, if you cannot find a scheme for your tool of choice, make your own and let Ethan know what you have contributed!
 

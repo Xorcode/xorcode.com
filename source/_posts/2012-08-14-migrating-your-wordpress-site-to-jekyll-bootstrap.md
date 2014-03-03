@@ -47,7 +47,7 @@ As you may have noticed, we specified a host and also turned off importing comme
 
 Since we intend to use Jekyll-Bootstrap we also made a slight change to the `wordpress.rb` migrator.
 
-<a class="btn btn-js" href="http://xorcode.net/SjIFeO">Look at our wordpress.rb</a>
+<a class="btn btn-primary" href="http://xorcode.net/SjIFeO"><i class="fa fa-bookmark"></i> Look at our wordpress.rb</a>
 
 ### Picking a parser
 
@@ -83,9 +83,7 @@ Once you have the site up and running you can start customizing the templates an
 
 Take a look at what we have done with Jekyll and Jekyll-Bootstrap:
 
-<a class="btn btn-large btn-primary" href="http://xorcode.net/NjFJ0T">Jekyll-Bootstrap fork</a>
-
-<a class="btn btn-large btn-primary" href="http://xorcode.net/NjG0AV">Jekyll-Bootstrap theme</a>
+<a class="btn btn-primary" href="http://xorcode.net/NjG0AV"><i class="fa fa-github"></i> Jekyll-Bootstrap theme</a>
 
 ### In conclusion
 

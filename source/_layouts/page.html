@@ -1,11 +1,10 @@
 ---
 layout: default
 ---
-{% capture spanwidth %}{% if page.spanwidth > 0 %}{{ page.spanwidth }}{% else %}12{% endif %}{% endcapture %}
-<section class="section-wrapper{% if page.sectionclass %} {{ page.sectionclass }}{% endif %}">
+<section class="white">
   <div class="container">
     <div class="row">
-      <div class="span{{ spanwidth }}">
+      <div class="col-lg-8 col-lg-offset-2">
         {% if page.title %}
           <div class="row">
             <div class="span{{ spanwidth }}">
@@ -15,17 +14,6 @@ layout: default
         {% endif %}
         {{ content }}
       </div>
-      {% unless page.sidebar == false %}
-        <div class="span4">
-          <div class="blog-side-bar">
-            {% if site.page_asides.size %}
-              {% include_array page_asides %}
-            {% else %}
-              {% include_array default_asides %}
-            {% endif %}
-          </div>
-        </div>
-      {% endunless %}
     </div>
   </div>
 </section>

@@ -30,6 +30,16 @@ p {
   font-size: 16px;
 }
 
+blockquote {
+  p {
+    line-height: 34px;
+  }
+}
+
+.code, .gist {
+  margin-bottom: 25px;
+}
+
 .centered {
   text-align: center;
 }
@@ -43,12 +53,12 @@ a {
   -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
   -o-transition: color 0.1s ease-in, background 0.1s ease-in;
   transition: color 0.1s ease-in, background 0.1s ease-in;
-  :hover, :focus {
+  &:hover, &:focus {
     color: #7b7b7b;
     text-decoration: none;
     outline: 0;
   }
-  :before, :after {
+  &:before, &:after {
     -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
     -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
     -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
@@ -105,7 +115,7 @@ hr {
   background-color: #D11F2E;
 }
 
-@media (max-width: 768px) {
+@media (max-width: @screen-sm-min) {
   .navbar-brand img {
     height: 25px;
   }
@@ -125,7 +135,7 @@ hr {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: @screen-sm) {
   .navbar-nav > li > a {
     padding-top: 31px;
     padding-bottom: 20px;
@@ -179,19 +189,22 @@ hr {
     text-transform: uppercase;
     padding-bottom: 20px;
   }
-}
+  li {
+    line-height: 28px;
+    font-size: 16px;
+  }
+  &.dark {
+    background-color: #131313;
+  }
 
-.footer.dark {
-  background-color: #131313;
-}
+  &.dark a {
+    color: #888888 !important;
+  }
 
-.footer.dark a {
-  color: #888888 !important;
-}
-
-.footer.thin {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  &.thin {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
 }
 
 /* +++++ Color Wraps / Blog Page +++++ */
@@ -208,16 +221,25 @@ hr {
   background-color: #ffffff;
 }
 
+.post-content {
+  margin-top: 10px;
+}
+
 /* Blog Date*/
-bd {
+.post-date,
+.post-comments,
+.post-like,
+.post-info {
   font-size: 12px;
-  text-transform: uppercase;
   color: #d2d2d2;
+}
+.post-date {
+  text-transform: uppercase;
   font-weight: 700;
 }
 
 /* Blog Author*/
-ba {
+.ba {
   font-size: 12px;
   text-transform: uppercase;
 }
@@ -229,6 +251,6 @@ ba {
 }
 
 /* Blog Tags */
-bt {
+.bt {
   font-size: 12px;
 }
