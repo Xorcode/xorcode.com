@@ -24,8 +24,10 @@
     <meta property="og:title" content="{{ page.title }}">
     <meta property="og:description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
     <meta property="og:image" content="{% if post.index_image %}http://www.xorcode.com{{ post.square_image }}{% else %}http://www.xorcode.com/img/xorcode-icon.png{% endif %}">
-    <meta property="og:type" content="article">
     <meta property="og:determiner" content="auto">
+    <meta property="og:type" content="article">
+    {% else %}
+    <meta property="og:type" content="website">
     {% endif %}
 
     {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' }}{% endif %}{% endcapture %}

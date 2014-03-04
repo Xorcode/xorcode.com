@@ -27,7 +27,7 @@
     <meta property="og:determiner" content="auto">
     <meta property="og:type" content="article">
     {% else %}
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     {% endif %}
 
     {% capture canonical %}{{ site.url }}{% if site.permalink contains '.html' %}{{ page.url }}{% else %}{{ page.url | remove:'index.html' }}{% endif %}{% endcapture %}
