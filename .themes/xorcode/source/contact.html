@@ -1,52 +1,38 @@
 ---
 layout: default
 ---
-<div class="white">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="blog-side-text-block widget-filled">
-          <h3>Contact Information</h3>
-          <ul class="unstyled big-iconed-tips">
-            <li>
-              <i class="icon-map-marker"></i>
-              Address: 4214 Cantey Pl, Charlotte, NC
-            </li>
-            <li>
-              <i class="icon-phone-sign"></i>
-              Phone: (980) 355-9056
-            </li>
-            <li>
-              <i class="icon-envelope-alt"></i>
-              Email: hello@xorcode.com
-            </li>
-            <li>
-              <i class="icon-globe"></i>
-              Website: www.xorcode.com
-            </li>
-            <li>
-              <i class="icon-facebook-sign"></i>
-              Facebook: facebook.com/xorcode
-            </li>
-            <li>
-              <i class="icon-twitter-sign"></i>
-              Twitter: twitter.com/xorcode
-            </li>
-          </ul>
-          <p>Xorcode delivers premium business tools designed to strengthen, simplify, and structure the business of our customers.</p>
-          <a href="http://www.manta.com/c/mx2z2lc/xorcode-llc?referid=11081&rl=recommend-us-on-manta-badge#overlay:recommendation;" target="_blank"><img src="http://www.manta.com/manta/images/mantaBadge_recommendus.png" border="0" /></a>
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="white-card extra-padding">
-          <div id="getsat-widget-6429"></div>
-        </div>
+
+  <div class="container pt">
+    <div class="row mt">
+      <div class="col-lg-6 col-lg-offset-3 centered">
+        <h3>CONTACT XORCODE</h3>
+        <hr>
+        <p>Do you have a project or idea you would like us to help you realize? Send us a message and we will get back to you!</p>
       </div>
     </div>
-  </div>
-</div>
-
-<script type="text/javascript" src="https://loader.engage.gsfn.us/loader.js"></script>
-<script type="text/javascript">
-if (typeof GSFN !== "undefined") { GSFN.loadWidget(6429,{"containerId":"getsat-widget-6429"}); }
-</script>
+    <div class="row mt">  
+      <div class="col-lg-8 col-lg-offset-2">
+        <form role="form" action="http://runcible.xorcode.com/email/contact.php" method="post">
+          <div class="form-group">
+            <label for="nameInput" class="sr-only">Your Name</label>
+            <input type="name" class="form-control" id="nameInput" placeholder="Your Name" name="name">
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="emailInput" class="sr-only">Subject</label>
+            <input type="email" class="form-control" id="emailInput" placeholder="Enter email address" name="email">
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="subjectInput" class="sr-only">Subject</label>
+            <input type="text" class="form-control" id="subjectInput" placeholder="Subject" name="subject">
+            <br>
+          </div>
+          <label for="contentInput" class="sr-only">Your Message</label>
+          <textarea class="form-control" rows="6" id="contentInput" placeholder="Enter your message here" name="content"></textarea>
+          <br>
+          <button type="submit" class="btn btn-success">SEND MESSAGE</button>
+        </form>          
+      </div>
+    </div><!-- /row -->
+  </div><!-- /container -->
