@@ -1,0 +1,102 @@
+---
+layout: default
+---
+
+  <div class="container pt">
+    <div class="row mt">
+      <div class="col-lg-6 col-lg-offset-3 centered">
+        <h3>REQUEST AN ESTIMATE</h3>
+        <hr>
+        <p>You really want to find the castle with the princess? Or maybe you have an idea for the next, awesome web or mobile application that you need help realizing? We're here to help any way we can!</p>
+        <p><i class="fa fa-phone"></i> (980) 355-9056</p>
+      </div>
+    </div>
+    <div class="row mt">  
+      <div class="col-lg-8 col-lg-offset-2">
+        <form role="form" action="http://runcible.xorcode.com/email/estimate.php" method="post">
+          <div class="form-group">
+            <label for="nameInput" class="sr-only">Your Name</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="name" class="form-control" id="nameInput" placeholder="Your Name" name="name">
+            </div>
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="emailInput" class="sr-only">Your Email address</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+              <input type="email" class="form-control" id="emailInput" placeholder="Your email address" name="email">
+            </div>
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="phoneInput" class="sr-only">Your phone number</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+              <input type="phone" class="form-control" id="phoneInput" placeholder="Your phone number" name="phone">
+            </div>
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="companyInput" class="sr-only">Your company name</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-building-o"></i></span>
+              <input type="phone" class="form-control" id="companyInput" placeholder="Your company name" name="company">
+            </div>
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="projectTypeInput" class="sr-only">Project Type</label>
+            <select class="form-control" id="projectTypeInput" name="type">
+              <option value="">&mdash; Project Type &mdash;</option>
+              <option>Android Application</option>
+              <option>Copywriting</option>
+              <option>Corporate Branding</option>
+              <option>Content Writing</option>
+              <option>Node.js Development</option>
+              <option>PHP Development</option>
+              <option>Server Management/Monitoring</option>
+              <option>Web Design</option>
+            </select>
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="projectTimelineInput" class="sr-only">Project Start</label>
+            <select class="form-control" id="projectTimelineInput" name="timeline">
+              <option value="">&mdash; Project Start &mdash;</option>
+              <option>Stop the presses! ASAP!</option>
+              <option>Within a week...</option>
+              <option>Within a month...</option>
+              <option>Whenever you can get to it...</option>
+            </select>
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="projectLengthInput" class="sr-only">Project Duration</label>
+            <select class="form-control" id="projectLengthInput" name="duration">
+              <option value="">&mdash; Project Duration &mdash;</option>
+              <option>One-off, just a few hours</option>
+              <option>A day or two</option>
+              <option>Around a week</option>
+              <option>A few weeks</option>
+              <option>Ongoing/Retainer</option>
+            </select>
+            <br>
+          </div>
+          <div class="form-group">
+            <label for="budgetInput" class="sr-only">Your budget</label>
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input type="text" class="form-control" id="budgetInput" placeholder="Your budget" name="budget">
+            </div>
+            <br>
+          </div>
+          <label for="contentInput" class="sr-only">Describe your project and its requirements...</label>
+          <textarea class="form-control" rows="12" id="contentInput" placeholder="Describe your project and its requirements..." name="description"></textarea>
+          <br>
+          <button type="submit" class="btn btn-success">REQUEST ESTIMATE</button>
+        </form>          
+      </div>
+    </div><!-- /row -->
+  </div><!-- /container -->
