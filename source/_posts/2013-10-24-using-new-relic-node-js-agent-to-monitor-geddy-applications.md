@@ -100,6 +100,8 @@ We are using `newrelic.setControllerName()` to name our requests so that they do
 
 ## Run your application
 
+Running our application with Node is simple:
+
     $ node app
 
 Navigate to [http://localhost:4000/](http://localhost:4000/) and then [http://localhost:4000/users](http://localhost:4000/users) where you can start adding, editing, and removing users to get some sample data in your New Relic account.
