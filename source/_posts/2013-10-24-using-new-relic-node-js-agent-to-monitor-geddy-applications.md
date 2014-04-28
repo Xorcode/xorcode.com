@@ -40,11 +40,6 @@ In order for New Relic to be able to properly report for your application we nee
 Create a new file in your project root called `app.js` and add the following to that file to get New Relic up and running in your Geddy project:
 
 ```
-if (process.env.NODE_ENV == 'production') {
-  process.env.NEW_RELIC_LOG = 'stdout';
-  var newrelic = require('newrelic');
-}
-
 var geddy = require('geddy');
 
 geddy.startCluster({
@@ -52,6 +47,19 @@ geddy.startCluster({
 , port: process.env.PORT || '4000'
 , environment: process.env.NODE_ENV || 'development'
 });
+```
+
+## Loading New Relic
+
+Load New Relic in your `config/init.js` script.
+
+```
+var cluster = require('cluster');
+
+if (cluster.isWorker && process.env.NODE_ENV == 'production') {
+  process.env.NEW_RELIC_LOG = 'stdout';
+  geddy.newrelic = require('newrelic');
+}
 ```
 
 We only require the New Relic module if we're running in production. You can always remove the `if` statement around `require('newrelic')` if that makes more sense to you. We also prefer that New Relic logs to `stdout` instead of to a log file since we host on various different platforms and we might not want files to be created at all.
@@ -79,11 +87,9 @@ You'll see output similar to this:
 Open up `app/controllers/application.js` and change its contents to the following:
 
 ```
-var newrelic = require('newrelic');
-
 var Application = function () {
   this.before(function () {
-    newrelic.setControllerName(this.params.controller, this.params.action);
+    geddy.newrelic.setControllerName(this.params.controller, this.params.action);
   });
 };
 
@@ -109,3 +115,7 @@ You can take a look at our example repository if you want to make sure you didn'
 ## Documentation
 
 For more information, please see the [Geddy documentation](http://geddyjs.org/reference#controllers.params) on controllers as well as the [New Relic Node.js project](https://github.com/newrelic/node-newrelic/#transactions-and-request-naming).
+
+## Thank yous
+
+Thanks to [Ben Ng](https://github.com/ben-ng) for finding the memory leak issue with New Relic and for supplying a fix.
