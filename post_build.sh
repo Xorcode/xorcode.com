@@ -15,11 +15,11 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ] && [ "$TRAVIS_REPO_SLUG" == "Xorcode/xo
   git config --global user.name "Travis"
 
   echo -e "Setting up Github Pages configuration for Octopress"
-  rake setup_github_pages[https://${GH_TOKEN}@github.com/Xorcode/xorcode.github.io] 2> /dev/null || error_exit "Error setting up Octopress for Github Pages";
+  bundle exec rake setup_github_pages[https://${GH_TOKEN}@github.com/Xorcode/xorcode.github.io] 2> /dev/null || error_exit "Error setting up Octopress for Github Pages";
   echo -e "Generating site and deploying to Github Pages"
   rm -Rf source/_layouts source/_assets && rake update_source[xorcode] && rm -Rf source.old && rm -Rf public 2> /dev/null
-  rake generate 2> /dev/null || error_exit "Error generating site";
-  rake deploy 2> /dev/null || error_exit "Error deploying site to Github Pages";
+  bundle exec rake generate 2> /dev/null || error_exit "Error generating site";
+  bundle exec rake deploy 2> /dev/null || error_exit "Error deploying site to Github Pages";
 fi
 
 end=$(date +%s)
