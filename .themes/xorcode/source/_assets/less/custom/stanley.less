@@ -142,8 +142,6 @@ hr {
 }
 
 .wwi {
-  padding-top: 70px;
-  padding-bottom: 70px;
   background: rgb(254,254,253); /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZWZlZmQiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzdjMGEyIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -159,7 +157,7 @@ hr {
 .footer {
   background-color: #2f2f2f;
   padding-top: 50px;
-  padding-bottom: 50px; 
+  padding-bottom: 50px;
   p {
     color: white;
   }
@@ -276,5 +274,82 @@ pre {
   .navbar-nav > li > a {
     padding-top: 31px;
     padding-bottom: 20px;
+  }
+}
+
+.carousel {
+  height: 500px;
+  .item {
+    height: 500px;
+  }
+}
+
+.carousel-inner {
+  > .item {
+    > img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+  }
+}
+
+.carousel-caption {
+  z-index: 10;
+  text-shadow: none;
+  bottom: 40px;
+  color: #333;
+}
+
+.carousel-control {
+  color: #000;
+  opacity: 0.2;
+  font-size: 40px;
+  text-shadow: none !important;
+  &:hover {
+    color: #000;
+    opacity: 0.4;
+  }
+  &.left, &.right {
+    background: transparent !important;
+  }
+  .fa-chevron-left,
+  .fa-chevron-right {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+  }
+  .glyphicon-chevron-left {
+    left: 50%;
+  }
+  .glyphicon-chevron-right {
+    right: 50%;
+  }
+}
+
+.carousel-indicators {
+  li {
+    border-color: rgba(0,0,0,0.2);
+    &.active {
+      background-color: rgba(0,0,0,0.2);
+    }
+  }
+}
+
+// Scale up controls for tablets and up
+@media screen and (min-width: @screen-sm-min) {
+  // Scale up the controls a smidge
+  .carousel-control {
+    .fa-chevron-left,
+    .fa-chevron-right {
+      width: 30px;
+      height: 30px;
+      margin-top: -15px;
+      margin-left: -15px;
+      font-size: 30px;
+    }
   }
 }

@@ -5,17 +5,39 @@ description: Custom Node.js, Python, Ruby, PHP, Perl and Android development. Ar
 ---
 
     <!-- +++++ Welcome Section +++++ -->
-    <div class="wwi">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 centered">
-            <img src="{% asset_path origami-sheep.png %}" width="250">
-            <h1>You started using tools 800,000 years ago</h1>
-            <p>We write software that evolves your toolbox from tedious to awesome. We farm servers in the clouds and conjure confluent code from pixie dust and meteorite slag. If besought, we will help you find the castle with the princess.</p>
-            <a href="{{ root_url }}/estimate.html" class="btn btn-danger btn-lg"><i class="fa fa-heart"></i> Request an Estimate</a>
-          </div><!-- /col-lg-8 -->
-        </div><!-- /row -->
-        </div> <!-- /container -->
+    <div id="welcomeSlider" class="wwi carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#welcomeSlider" data-slide-to="0" class="active"></li>
+        <li data-target="#welcomeSlider" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="container">
+            <div class="carousel-caption">
+              <p><img src="{% asset_path foodles-logo.png %}" width="450"></p>
+              <p class="lead">Foodl.es keeps all your favorite family recipes at your fingertips, no matter where your family meal traditions take you.</p>
+              <a href="http://kck.st/1veSwLo" class="btn btn-danger btn-lg"><i class="fa fa-heart"></i> Support Foodles on Kickstarter</a>
+            </div><!-- /carousel-caption -->
+          </div><!-- /container -->
+        </div><!-- /item.active -->
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>You started using tools 800,000 years ago</h1>
+              <p class="lead">We write software that evolves your toolbox from tedious to awesome. We farm servers in the clouds and conjure confluent code from pixie dust and meteorite slag. If besought, we will help you find the castle with the princess.</p>
+              <a href="{{ root_url }}/estimate.html" class="btn btn-danger btn-lg"><i class="fa fa-at"></i> Request an Estimate</a>
+            </div><!-- /carousel-caption -->
+          </div><!-- /container -->
+        </div><!-- /item -->
+      </div><!-- /carousel-inner -->
+      <a class="left carousel-control" href="#welcomeSlider" role="button" data-slide="prev">
+        <span class="fa fa-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#welcomeSlider" role="button" data-slide="next">
+        <span class="fa fa-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div><!-- /wwi -->
 
     <div class="ww">
@@ -36,7 +58,7 @@ description: Custom Node.js, Python, Ruby, PHP, Perl and Android development. Ar
           </div>
         </div>
       </div>
-    </div>  
+    </div>
 
     {% assign index = true %}
     <div class="container pt">
