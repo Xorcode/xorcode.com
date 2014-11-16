@@ -4,9 +4,9 @@ require "stringex"
 
 ## -- Rsync Deploy config -- ##
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
-ssh_user       = "xorcode@xorcode.com"
-ssh_port       = "22"
-document_root  = "~/"
+ssh_user       = ""
+ssh_port       = ""
+document_root  = ""
 rsync_delete   = false
 rsync_args     = ""  # Any extra arguments to pass to rsync
 deploy_default = "push"
@@ -366,4 +366,28 @@ desc "list tasks"
 task :list do
   puts "Tasks: #{(Rake::Task.tasks - [Rake::Task[:list]]).join(', ')}"
   puts "(type rake -T for more detail)\n\n"
+end
+
+desc "Generate site from Travis CI and publish to Github Pages"
+task :github_pages do
+  rm_rf ["source/_layouts", "source/_assets"]
+  Rake::Task[:update_source].invoke("xorcode")
+  rm_rf ["#{source_dir}.old", public_dir]
+  if ENV["TRAVIS_PULL_REQUEST"].to_s.to_i > 0
+    puts "## Pull request detected. Executing build only."
+    Rake::Task[:generate].invoke
+    exit
+  end
+  if ENV["TRAVIS"]
+    puts "## Setting up Github Pages configuration for Octopress"
+    sh "git config --global user.name '#{ENV['GIT_NAME']}'"
+    sh "git config --global user.email '#{ENV['GIT_EMAIL']}'"
+    sh "git config --global push.default simple"
+    Rake::Task[:setup_github_pages].invoke("https://#{ENV['GH_TOKEN']}@github.com/Xorcode/xorcode.github.io")
+  else
+    Rake::Task[:setup_github_pages].invoke unless File.directory?(deploy_dir)
+  end
+  Rake::Task[:generate].invoke
+  puts "## Deploying to Github Pages."
+  Rake::Task[:deploy].invoke
 end

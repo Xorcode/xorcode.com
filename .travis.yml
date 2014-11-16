@@ -1,8 +1,8 @@
 language: ruby
 rvm:
-- 1.9.3
+- 2.1.3
 script: bundle exec rake generate
-after_success: bash post_build.sh
+after_success: bundle exec rake github_pages
 env:
   global:
-    secure: UJXei3iU7ms74tPxFPnOmvhzNLwxiAV3VvqKzpYTsLQs/rM2X+lfyZYPv/Nw+vXfOIw8EQIf/Ri3GOBbabGaP88glkFrRptQXoSg1XeWOQbuYKlb1oz75jPiOkVARJ3+uobN2U4yBANhBc3bhPTBQiNbtlViRujbnoCgWNl+iSI=
+    secure: MZZFoUT2xw4bROinANSFt1SPYlm4p5bCeF7HnX1gnsZNgbZvQcHsLLGgG1cMpy0pPgymNsiNAh51hJEfY0nVmzzX4YRsg+tNitqAjwPy+Rotq/RHkqLCu7COkdS/VI8jpPXSzie/vedDKncCxQUQ918CiWPvphLT6hNRgwl60c0=
