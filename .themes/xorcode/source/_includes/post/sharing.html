@@ -1,14 +1,6 @@
 <div class="sharing">
-  {% if site.twitter_tweet_button %}
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ site.url }}{{ page.url }}/" data-via="{{ site.twitter_user }}" data-counturl="{{ site.url }}{{ page.url }}/" >Tweet</a>
-  {% endif %}
-  {% if site.google_plus_one %}
-    <div class="g-plusone" data-size="{{ site.google_plus_one_size }}"></div>
-  {% endif %}
-  {% if site.flattr_button %}
-    <script id='flattrbtn'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid={{ site.flattr_user }}&button=compact&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=20;f.width=110;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('flattrbtn');</script>
-  {% endif %}
-  {% if site.facebook_like %}
-    <div class="fb-share-button" data-send="true" data-type="button_count"></div>
-  {% endif %}
+  <span class="st_facebook_hcount" displayText="Facebook"></span>
+  <span class="st_twitter_hcount" displayText="Tweet"></span>
+  <span class="st_linkedin_hcount" displayText="LinkedIn"></span>
+  <span class="st_evernote_hcount" displayText="Evernote"></span>
 </div>
