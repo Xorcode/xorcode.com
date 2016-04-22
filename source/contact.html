@@ -13,6 +13,9 @@ layout: default
     <div class="row mt">
       <div class="col-lg-8 col-lg-offset-2">
         <form role="form" action="http://formspree.io/hello@xorcode.com" method="post">
+          <input type="hidden" name="_next" value="http://www.xorcode.com/thank-you.html"/>
+          <input type="hidden" name="_subject" value="New request for contact"/>
+          <input type="text" name="_gotcha" style="display:none;"/>
           <div class="form-group">
             <label for="nameInput" class="sr-only">Your Name</label>
             <input type="name" class="form-control" id="nameInput" placeholder="Your Name" name="name">
@@ -20,7 +23,7 @@ layout: default
           </div>
           <div class="form-group">
             <label for="emailInput" class="sr-only">Your email address</label>
-            <input type="email" class="form-control" id="emailInput" placeholder="Your email address" name="email">
+            <input type="email" class="form-control" id="emailInput" placeholder="Your email address" name="_replyto">
             <br>
           </div>
           <div class="form-group">
@@ -29,7 +32,7 @@ layout: default
             <br>
           </div>
           <label for="contentInput" class="sr-only">Your Message</label>
-          <textarea class="form-control" rows="6" id="contentInput" placeholder="Enter your message here" name="content"></textarea>
+          <textarea class="form-control" rows="6" id="contentInput" placeholder="Enter your message here" name="message"></textarea>
           <br>
           <button type="submit" class="btn btn-success">SEND MESSAGE</button>
         </form>
