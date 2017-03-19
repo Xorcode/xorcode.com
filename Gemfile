@@ -1,5 +1,7 @@
 source "http://rubygems.org"
 
+ruby "2.3.3"
+
 group :development do
   gem 'rake', '~> 10.1.1'
   gem 'rack', '~> 1.4.1'
@@ -21,6 +23,7 @@ group :development do
   gem 'uglifier'
   gem 'sass'
   gem 'less'
+  gem 'puma'
 end
 
 gem 'sinatra', '~> 1.3.3'
