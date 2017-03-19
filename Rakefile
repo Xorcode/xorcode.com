@@ -391,3 +391,9 @@ task :github_pages do
   puts "## Deploying to Github Pages."
   Rake::Task[:deploy].invoke
 end
+
+namespace :assets do
+  task :precompile do
+    puts `bundle exec jekyll build`
+  end
+end

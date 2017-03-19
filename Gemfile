@@ -22,5 +22,6 @@ gem 'uglifier'
 gem 'sass'
 gem 'less'
 gem 'puma'
+gem 'rack-jekyll'
 
 gem 'sinatra', '~> 1.3.3'
