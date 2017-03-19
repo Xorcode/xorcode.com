@@ -394,6 +394,6 @@ end
 
 namespace :assets do
   task :precompile do
-    puts `bundle exec jekyll build`
+    puts `bundle exec jekyll _site`
   end
 end
